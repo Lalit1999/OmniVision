@@ -1,0 +1,27 @@
+.header2
+{
+	display: flex ;
+	background-color: steelblue ;
+	position: fixed; 
+  	width: 100% ;
+  	z-index: 14 ;
+  	height: 7vh ;
+  	overflow: visible;
+	color: white ;
+	justify-content: space-between;
+}
+
+.header2-login, .header2-menu
+{
+	font-size: 2rem ;
+}
+
+.ov
+{
+	background-color: steelblue ;
+  	height: 10vh;
+	font-size: 4rem ;
+	padding: 0 0.4em .3em ;
+	border-radius: 1rem ;
+	/*-webkit-text-stroke: 2px blue;*/
+}

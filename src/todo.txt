@@ -1,0 +1,4 @@
+1. Header ka background-color
+2. Login/Register form ka bgcolor
+
+3. Bkacground componnet using particle and stopwatch jaisa bg
