@@ -6,7 +6,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: top;
-	min-height: 30vw ;
+	min-height: 34vw ;
 }
 
 .cont
@@ -14,7 +14,7 @@
 	width:100% ;
 	text-align: center;
 	background-color: rgba(0, 0, 0, 0.7) ;
-	min-height: 30vw ;
+	min-height: 34vw ;
 }
 
 .row
@@ -86,7 +86,7 @@
 	font-size : 5rem;
 	color: whitesmoke;
 	font-family: 'Roboto' ;
-	margin-top: 0.7em ;
+	margin-top: 1.5em ;
 	margin-bottom: 0.1em ;
 }
 
