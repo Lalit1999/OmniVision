@@ -6,7 +6,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: top;
-	min-height: 40vw ;
+	min-height: 30vw ;
 }
 
 .cont
@@ -14,7 +14,7 @@
 	width:100% ;
 	text-align: center;
 	background-color: rgba(0, 0, 0, 0.7) ;
-	min-height: 40vw ;
+	min-height: 30vw ;
 }
 
 .row
@@ -72,7 +72,7 @@
 	padding: 0.5em;
 	font-size: 1.5rem ;
 	border-radius: 999rem ;
-	margin: 5vh 35vw;
+	margin: 3vh 35vw;
 	transition: all 0.4s ;
 }
 
@@ -86,7 +86,8 @@
 	font-size : 5rem;
 	color: whitesmoke;
 	font-family: 'Roboto' ;
-	margin-top: 0.5em ;
+	margin-top: 0.7em ;
+	margin-bottom: 0.1em ;
 }
 
 .slide-message
