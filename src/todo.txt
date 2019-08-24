@@ -1,4 +1,5 @@
 1. Header ka background-color
+2. Header ke andar jo login likha hai uska color/font
 2. Login/Register form ka bgcolor
 
-3. Bkacground componnet using particle and stopwatch jaisa bg
+3. Background component using particle and stopwatch jaisa bg

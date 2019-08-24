@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 .slide
 {
@@ -33,7 +34,7 @@
 	cursor: pointer ;
 	color: black ;
 	top: 45% ;
-	padding: 1em 1.1em ;
+	padding: .8em .95em ;
 	font-size: 1.5rem ;
 	border-radius: 50% ;
 	background-color: rgba(100, 100, 100, 0.5) ;
