@@ -1,4 +1,6 @@
 import React from 'react';
+
+import Header2 from './comps/header2/Header2.js' ;
 // import './App.css';
 
 class App extends React.Component
@@ -6,7 +8,10 @@ class App extends React.Component
   render() 
   {
     return(
-      <div>This is App.</div>
+      <div className="App">
+      	<Header2 />
+      	<div>This is Rest of the App. </div>
+      </div>
     ) ;
   }
 }
