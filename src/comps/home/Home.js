@@ -28,7 +28,7 @@ class Home extends React.Component
 	            	backgroundImage: 'url(' + i3+ ')',
             	},
 	            title: 'Face Detection',
-	            link : '/fghj' ,
+	            link : '/face' ,
 	            message: 'Magic Eye detecting faces in your pictures',
          	},
             {	style : {
@@ -36,13 +36,13 @@ class Home extends React.Component
             	},
 	            title: 'Color Detection',
 	            message: 'Magic Eye is not color blind' ,
-	            link : '/asdf'
+	            link : '/color'
 	        } ,
 	        {	style : {
 	            	backgroundImage: 'url(' + i2+ ')',
             	},
 	            title: 'General Model',
-	            link : '/fgh' ,
+	            link : '/general' ,
 	            message: 'Day-to-Day items detected by Magic Eye',
          	},
         ];
