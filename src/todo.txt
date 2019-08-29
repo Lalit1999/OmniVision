@@ -1,6 +1,11 @@
 1. Header ka background-color
 2. Header ke andar jo login likha hai uska color/font
-2. Login/Register form ka bgcolor
+3. Login/Register form ka bgcolor
 
-3. Background component using particle and stopwatch jaisa bg
 4. LoginPop banana hai shayad
+
+-------------------------------------------
+
+1. Box Component banana hai
+2. Scroll Into view lagana hai
+3. Background component using particle and stopwatch jaisa bg

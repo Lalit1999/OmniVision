@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './detcont.css' ;
+
 class DetectContent extends Component {
 	constructor()
 	{

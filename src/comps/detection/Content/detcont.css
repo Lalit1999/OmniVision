@@ -1,0 +1,36 @@
+.DetectContent h1
+{
+	font-size: 4rem ;
+}
+
+.DetectContent h3
+{
+	font-size: 2rem ;
+}
+
+.input-con input
+{
+	font-size: 1.5rem;
+	margin: 1em 0.5em ;
+	padding: 0.5em 1em ;
+	border-top-left-radius: 1rem ;
+	border-bottom-left-radius: 1rem ;
+	border: 1px solid black ;
+}
+
+.input-con button
+{
+	color: white;
+	background-color: steelblue ;
+	font-size: 1.5rem;
+	padding: 0.53em 1em ;
+	border: none;
+	box-shadow: none ;
+	border-top-right-radius: 1rem ;
+	border-bottom-right-radius: 1rem ; 
+}
+
+.input-con input:focus, .input-con button:focus
+{
+	outline: 0 ;
+}

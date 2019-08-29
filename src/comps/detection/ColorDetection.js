@@ -4,6 +4,7 @@ import Clarifai from 'clarifai' ;
 import DetectContent from './Content/DetectContent.js' ;
 import Image from '../Image/Image.js' ;
 import ColorResult from './Result/ColorResult.js' ;
+import './colordetect.css' ;
 
 const app = new Clarifai.App( { apiKey: '8ffd32e4a8994da296c0be708e6f4cec' } );
 
@@ -36,7 +37,7 @@ class ColorDetection extends React.Component
 		return(
 			<div className="color">
 				<DetectContent title="Color Detection" onSubmit={this.onButtonSubmit}
-					text="Now, Magic Eye will detect colors from your pictures" />
+					text="All-Seeing Eye will detect colors in your pictures" />
 				<p className="color-error"> {this.state.error} </p>
 				<Image link={this.state.img} />
 				<ColorResult colors={this.state.data} />

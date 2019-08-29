@@ -1,0 +1,10 @@
+.img-div
+{
+	width: 50vw;
+	height: 50vh;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin: auto ;
+	display: inline-block;
+	/*border: 1px solid black;*/
+}
