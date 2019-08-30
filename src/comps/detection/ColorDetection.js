@@ -12,11 +12,20 @@ class ColorDetection extends React.Component
 {	constructor()
 	{
 		super() ;
+		this.resRef = React.createRef() ;
 		this.state = {
 			error: '' ,
 			img : '' ,
 			data : [] 
 		} ;
+	}
+
+	scrollToBottom = () => {
+	    this.resRef.current.scrollIntoView({ behavior: 'smooth' })
+	}
+
+	componentDidUpdate = () => {
+		this.scrollToBottom() ;
 	}
 
 	onButtonSubmit = (txt) => {
@@ -40,7 +49,7 @@ class ColorDetection extends React.Component
 					text="All-Seeing Eye will detect colors in your pictures" />
 				<p className="color-error"> {this.state.error} </p>
 				<Image link={this.state.img} />
-				<ColorResult colors={this.state.data} />
+				<ColorResult r={this.resRef} scroll={this.scrollToBottom} colors={this.state.data} />
 			</div>
 		) ;
 	}

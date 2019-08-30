@@ -6,6 +6,4 @@
 
 -------------------------------------------
 
-1. Box Component banana hai
-2. Scroll Into view lagana hai
-3. Background component using particle and stopwatch jaisa bg
+1. Background component using particle and stopwatch jaisa bg
