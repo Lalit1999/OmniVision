@@ -36,3 +36,41 @@
 {
 	margin-left: 2vw ;
 }
+
+.h2-para
+{
+	display: inline-block; 
+	margin: 0;
+}
+
+.eye
+{
+	width: 65px ;
+	/*transform: translateY(9px);*/
+	position: relative;
+	z-index: 1 ;
+}
+
+/*.eye::before {
+  content: '';
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 4px solid white;
+  transform-origin: center;
+  transform: scale(1);
+}
+
+.eye:hover::before {
+  transition: all 0.75s ease-in-out;
+  transform-origin: center;
+  transform: scale(1.75);
+  opacity: 0;
+}
+
+.eye:hover {
+  cursor: pointer;
+}*/
