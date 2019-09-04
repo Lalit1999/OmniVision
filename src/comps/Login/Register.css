@@ -1,0 +1,83 @@
+.bgk
+{
+  position: fixed;
+  z-index: -1 ;
+  top: 0;
+  bottom: 0 ;
+  left: 0 ;
+  right: 0 ; 
+  background-color: #ccddff ;
+  text-align: center;
+}
+
+.register
+{
+  border: 1px solid black;
+  margin: 10em auto 1em ;
+  padding: 2em ;
+  display: inline-block;
+  box-shadow: 4px 4px 8px 0 rgba( 0, 0, 0, .2 );
+  border-radius: .5rem;
+}
+
+.register-title
+{
+  font-size: 2.25rem;
+  margin: 0 0 .5em ;
+}
+
+.lbel
+{
+  margin-right: 1em ;
+  width: 7em;
+  text-align: right;
+  display: inline-block;
+  font-size: 1.5rem ; 
+}
+
+.register input
+{
+  font-size: 1.5rem ; 
+  background-color: transparent;
+  border : 1px solid black;
+  outline: 2px solid #ccddff;
+  box-shadow: 4px 4px 8px 0 rgba( 0, 0, 0, .2 );
+  margin-top: 0.5em ;
+}
+
+.register input:focus
+{
+  outline : 4px solid black ;
+  border: 1px solid black ;
+}
+
+.btn-cona button
+{
+  color: black ;
+  font-size: 1.3rem ;
+  padding: 0.5em 0.7em ;
+  margin-top: 1em ;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: .5rem;
+  transition: all .3s ;
+}
+
+.inpu:hover
+{
+  background-color: black ;
+  color: #ccddff ;
+  box-shadow: inset 0 0 0 1px #ccddff;
+}
+
+.btn-cona button:focus
+{
+  outline: 0 ;
+}
+
+.btn-cona button:hover
+{
+  background-color: black ;
+  color: #ccddff ;
+  box-shadow: inset 0 0 0 1px #ccddff;
+}

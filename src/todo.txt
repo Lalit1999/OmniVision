@@ -7,3 +7,11 @@
 -------------------------------------------
 
 1. Background component using particle and stopwatch jaisa bg
+
+
+-------------------------------------------
+Lalit (4-9-2019)
+login ka page ho gya...register ka page bhi ho gya hai
+
+dono me onclick fuction set karna hai
+aur register ki details check karni hai ki koi  kam toh nahi hai...aur use backend se bhi join karna hai.
