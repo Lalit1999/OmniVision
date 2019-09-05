@@ -43,6 +43,12 @@
 	margin: 0;
 }
 
+.h2-para a , .header2-login a
+{
+  text-decoration : none;
+  color: inherit;
+}
+
 .eye
 {
 	width: 65px ;

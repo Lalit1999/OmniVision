@@ -1,13 +1,11 @@
 1. Header ka background-color
 2. Header ke andar jo login likha hai uska color/font
-3. Login/Register form ka bgcolor
+3. Login /Register ka bgcolor
+4. ColorDetection ki css adjust according to background
 
-4. LoginPop banana hai shayad
-
--------------------------------------------
-
-1. Background component using particle and stopwatch jaisa bg
-
+5. LoginPop banana hai shayad
+6. Background component using particle and stopwatch jaisa bg
+https://stackoverflow.com/questions/44752138/in-react-how-to-pass-a-dynamic-variable-to-a-const-css-style-list
 
 -------------------------------------------
 Lalit (4-9-2019)

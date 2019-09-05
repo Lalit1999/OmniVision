@@ -9,6 +9,7 @@ import GeneralModel from './comps/detection/GeneralModel.js' ;
 import Login from './comps/Login/Login.js' ;
 import Register from './comps/Login/Register.js' ;
 import Header2 from './comps/header2/Header2.js' ;
+import BackGround from './comps/BackGround/BackGround.js' ;
 import './App.css';
 
 class App extends React.Component
@@ -26,6 +27,7 @@ class App extends React.Component
   {
     return(
       <div className="App">
+        <BackGround />
         <BrowserRouter>
           <div>
             <Header2 />
