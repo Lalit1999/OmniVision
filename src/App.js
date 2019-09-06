@@ -13,7 +13,18 @@ import BackGround from './comps/BackGround/BackGround.js' ;
 import './App.css';
 
 class App extends React.Component
-{
+{ constructor()
+  {
+    super() ;
+    this.state = {
+      color: '#4682b4' ,
+    } ;
+  }
+
+  setColor = (color) => {
+    this.setState({color: color}, () => console.log(this.state));
+  }
+
   resize = () => this.forceUpdate()
 
   componentDidMount() {
@@ -24,16 +35,16 @@ class App extends React.Component
     window.removeEventListener('resize', this.resize)
   }
   render() 
-  {
+  { const {color} = this.state ;
     return(
       <div className="App">
-        <BackGround />
+        <BackGround setColor={this.setColor}/>
         <BrowserRouter>
           <div>
-            <Header2 />
+            <Header2 color={color}/>
             <Switch>
               <Route path='/' exact component={Home} />
-              <Route path='/Color' exact component={ColorDetection} />
+              <Route path='/Color' exact render={props=><ColorDetection {...props} color={color} />}/>
               <Route path='/Face' exact component={FaceDetection} />
               <Route path='/General' exact component={GeneralModel} />
               <Route path='/login' exact component={Login} />

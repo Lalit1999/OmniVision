@@ -6,16 +6,19 @@ import './header2.css' ;
 
 class Header2 extends Component {
 	render() {
+		const {color} = this.props ;
 		return (
-			<div className="header2">
+			<div style={{ backgroundColor : color}} className="header2">
 				 <div className="header2-menu"> Menu </div>
-				 <div className="ov">
+				 <div style={{ backgroundColor : color}} className="ov">
 				 	<p className="h2-para">
 				 		<Link to="/"><img className="eye" alt="eye" src={Eye} />
 				 		<span className="ovname">OmniVision</span></Link> 
 				 	</p> 
 				 </div>
-				 <div className="header2-login"><Link to="/login"> Login </Link></div>
+				 <div style={{ color: color}} className="header2-login">
+				 	<Link to="/login"> Login </Link>
+				 </div>
 			</div>
 		);
 	}

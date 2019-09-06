@@ -22,7 +22,7 @@ class Box extends Component {
 				backgroundColor : this.props.color ,
 				color : this.calculateLightNess()  
 			}}>
-				<p className="t1"> {this.props.text1} </p>
+				<p className="t1"> {(this.props.text1 + ' ').slice(0, 5) + ' %' } </p>
 				<p className="tcolor"> {this.props.color} </p>
 				<p className="t2"> {this.props.text2} </p> 
 			</div>
