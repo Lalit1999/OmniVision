@@ -22,7 +22,7 @@ class App extends React.Component
   }
 
   setColor = (color) => {
-    this.setState({color: color}, () => console.log(this.state));
+    this.setState({color: color});
   }
 
   resize = () => this.forceUpdate()

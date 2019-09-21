@@ -1,8 +1,7 @@
 1. Login /Register ka bgcolor
-2. ColorDetection ki css adjust according to background
-3. Add more colors to background
+2. ColorDetection ki css adjust according to background   --> Probablu Done
 
-4. LoginPop banana hai shayad
+... LoginPop banana hai shayad
 
 -------------------------------------------
 Lalit (4-9-2019)

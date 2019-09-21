@@ -15,13 +15,19 @@
 	padding: 0.5em 1em ;
 	border-top-left-radius: 1rem ;
 	border-bottom-left-radius: 1rem ;
-	border: 1px solid black ;
+	border: 1px solid white ;
+	transition: color 2s ;
+}
+
+.input-con input::selection
+{
+	color: white;
+	background-color: black ;
 }
 
 .input-con button
 {
 	color: white;
-	background-color: steelblue ;
 	font-size: 1.5rem;
 	padding: 0.53em 1em ;
 	border: none;
@@ -29,8 +35,9 @@
 	border-top-right-radius: 1rem ;
 	border-bottom-right-radius: 1rem ; 
 	overflow: hidden;
-  	transition: color 0.5s ease-in-out;
+  	transition: color 0.5s ease-in-out, background-color 2s;
   	z-index: 1;
+  	border: 1px solid white;
   	position: relative;
 }
 
@@ -48,7 +55,7 @@
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  background-color: deepskyblue;
+  background-color: white;
   transform-origin: center;
   transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
   transition: transform 0.7s ease-in-out;
@@ -61,4 +68,9 @@
 
 .input-con button:hover::before {
   transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+}
+
+.detcont-title, .detcont-subtitle
+{
+  	transition: text-shadow 2s ;
 }

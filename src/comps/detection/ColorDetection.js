@@ -46,7 +46,7 @@ class ColorDetection extends React.Component
 		return(
 			<div className="color">
 				<DetectContent title="Color Detection" onSubmit={this.onButtonSubmit}
-					text="All-Seeing Eye will detect colors in your pictures" />
+				text="All-Seeing Eye will detect colors in your pictures" color={this.props.color}/>
 				<p className="color-error"> {this.state.error} </p>
 				<Image link={this.state.img} />
 				<ColorResult r={this.resRef} scroll={this.scrollToBottom} colors={this.state.data} />

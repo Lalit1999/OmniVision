@@ -8,8 +8,9 @@
 	height: 8vh ;
 	overflow: visible;
 	color: white ;
-  transition: background-color 2s ;
+  	transition: background-color 2s ;
 	justify-content: space-between;
+	border-bottom : 1px solid white;
 }
 
 /*.ovname
@@ -27,6 +28,7 @@
 	height: 10vh;
 	font-size: 4rem ;
 	padding: 0 0.4em .3em ;
+	border-bottom : 1px solid white;
 	border-radius: 1rem ;
   	transition: background-color 2s ;
 }

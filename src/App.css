@@ -2,3 +2,8 @@
 {
 	margin-top: 8vh ;
 }
+
+*:focus
+{
+	outline: 0 ;
+}

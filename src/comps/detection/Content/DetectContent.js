@@ -16,13 +16,20 @@ class DetectContent extends Component {
 	}
 
 	render() {
+		const {color} = this.props ; 
 		return (
 			<div className="DetectContent">
-				<h1> {this.props.title} </h1>
-				<h3> {this.props.text} </h3>
+				<h1 className="detcont-title"
+				 style={ {textShadow: '-3px -3px 0 '+color+', 3px -3px 0 '+color+', -3px 3px 0 '+color+', 3px 3px 0 '+color+''} }>
+				 {this.props.title} </h1>
+				<h3 className="detcont-subtitle" 
+				 style={ {textShadow: '-3px -3px 0 '+color+', 3px -3px 0 '+color+', -3px 3px 0 '+color+', 3px 3px 0 '+color+''} }>
+				 {this.props.text} </h3>
 				<div className="input-con" >
-					<input type="text" onChange={this.onInputChange} value={this.state.input}/>
-					<button onClick={() => this.props.onSubmit(this.state.input)}> Detect </button>
+					<input type="text" style={{color: color}}
+						onChange={this.onInputChange} value={this.state.input}/>
+					<button style={ {backgroundColor: color} } 
+						onClick={() => this.props.onSubmit(this.state.input)}> Detect </button>
 				</div>
 			</div>
 		);
