@@ -26,7 +26,7 @@ class BackGround extends Component {
 	  	let x = Math.floor((Math.random() * 19));
 	  	this.setState({ color: colors[x] }) ;
 	  	this.props.setColor(colors[x]) ;
-	  }, 7000);
+	  }, 12000);
 	}
 	componentWillUnmount = () => {
 	  clearInterval(this.interval);

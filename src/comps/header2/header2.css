@@ -23,6 +23,12 @@
 	font-size: 2rem ;
 }
 
+.header2-menu
+{
+	border: 1px solid white;
+	padding: .9vw .5vw .5vw ;
+	margin-top: .4vh ; 
+}
 .ov
 {
 	height: 10vh;
