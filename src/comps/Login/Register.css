@@ -6,7 +6,8 @@
   bottom: 0 ;
   left: 0 ;
   right: 0 ; 
-  background-color: #ccddff ;
+  background-color: transparent;
+  /*background-color: #ccddff ;*/
   text-align: center;
 }
 

@@ -8,7 +8,7 @@ class Register extends Component {
 				<div className="register">
 	              <h3 className="register-title">Register </h3>
 	              <div>
-	                <label className="lbel">User : </label>
+	                <label className="lbel">User Name : </label>
 	                <input  className="inpu" type="text" name="name" />
 	              </div>
 	              <div>
@@ -24,7 +24,7 @@ class Register extends Component {
 	                <input  className="inpu" type="text" name="name" />
 	              </div>
 	              <div>
-	              	<label className="lbel">Gmail-ID : </label>
+	              	<label className="lbel">Email-ID : </label>
 	                <input  className="inpu" type="text" name="name" />
 	              </div>
 	              <div className="btn-cona">
@@ -40,3 +40,6 @@ class Register extends Component {
 export default Register ;
 
 
+	// let nam = document.getElementByName('name') ;
+	// let btn = document.getElementById('btn-cona') ;
+	// let pass = document.getElementByName() ;
