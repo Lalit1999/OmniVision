@@ -27,7 +27,7 @@ class Header2 extends Component {
 	render() {
 		const {color} = this.props ;
 		return (
-			<div style={{ backgroundColor : color}} className="header2">
+			<div style={{ backgroundColor : 'rgba(0, 0, 0, 0.4)'}} className="header2">
 				 <div className="header2-menu">
 				 	<CheeseburgerMenu isOpen={this.state.menuOpen} closeCallback={this.closeMenu}>
 							<LoginMenu closeCallback={this.closeMenu}/>

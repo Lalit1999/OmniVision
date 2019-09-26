@@ -1,9 +1,9 @@
-1. Login /Register ka bgcolor
+1. Login /Register ki validations
 
 2. Create Homepage
 3. Create LoginMenu Component..(after user login)
 
-... Send color2(black/white through background)
+... Send color2(black/white through background)...?
 ... Delete Slider folder (wait)
 ... Delete Not Required Images
 ... LoginPop banana hai shayad
