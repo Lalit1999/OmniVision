@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:500&display=swap');
+
+.home-box
+{
+	display: flex; 
+	width: 100vw ;
+	height: 92vh ;
+	justify-content: space-around;
+}
+
+.home-box>div
+{
+	border: 3px solid white;
+	margin-top: -3.3em ;
+	min-width: 32.86vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.middle-box
+{
+	background-color: transparent ;
+}
+
+.left-box>div , .right-box>div
+{
+	height: 50%;
+	width: 100% ;
+	border: 1px solid white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.home-title
+{
+	color: white;
+	font-size: 5vw ;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100 ;
+	margin-top: .3em ;
+}
+
+.home-eye
+{
+	width: 15vw ;
+	transition: all 1.5s ;
+}
+
+.home-eye:hover
+{
+	transform: rotate(360deg);
+}
+
+.sp {
+  position: relative;
+}
+
+.sp::before, .sp::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.sp::before {
+  top: 0;
+  transform-origin: center right;
+}
+
+.sp:hover::before {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+
+.sp::after {
+  bottom: 0;
+  transform-origin: center left;
+}
+
+.sp:hover::after {
+  transform-origin: center right;
+  transform: scaleX(1);
+}
+
+.text-focus-in {
+	animation: text-focus-in 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@keyframes text-focus-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
