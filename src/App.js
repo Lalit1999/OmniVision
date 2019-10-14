@@ -45,7 +45,7 @@ class App extends React.Component
             <Switch>
               <Route path='/' exact component={Home} />
               <Route path='/Color' exact render={props=><ColorDetection {...props} color={color} />}/>
-              <Route path='/Face' exact component={FaceDetection} />
+              <Route path='/Face' exact render={props=><FaceDetection {...props} color={color} />} />
               <Route path='/General' exact component={GeneralModel} />
               <Route path='/login' exact component={Login} />
               <Route path='/register' exact component={Register} />

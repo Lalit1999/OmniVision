@@ -1,12 +1,58 @@
 import React from 'react' ;
+import Clarifai from 'clarifai' ;
 
+import DetectContent from './Content/DetectContent.js' ;
+import Image from '../Image/Image.js' ;
+import FaceResult from './Result/FaceResult.js' ;
+import './facedetect.css' ;
+
+const app = new Clarifai.App( { apiKey: '8ffd32e4a8994da296c0be708e6f4cec' } );
 
 class FaceDetection extends React.Component
-{
-	render()
+{	constructor()
 	{
+		super() ;
+		this.resRef = React.createRef() ;
+		this.state = {
+			error: '' ,
+			img : '' ,
+			faces : [] 
+		} ;
+	}
+
+	scrollToBottom = () => {
+	    this.resRef.current.scrollIntoView({ behavior: 'smooth' })
+	}
+
+	componentDidUpdate = () => {
+		this.scrollToBottom() ;
+	}
+
+	onButtonSubmit = (txt) => {
+		//console.log(txt) ;
+		//console.log(Clarifai) ;
+		app.models.predict(Clarifai.DEMOGRAPHICS_MODEL, txt)
+		.then( data => {
+			// console.log(data.outputs[0].data.regions) ;
+			this.setState({error: '', img: txt, faces: data.outputs[0].data.regions});
+		})
+		.catch( err => {
+			this.setState({error: 'Image URL Invalid or Image Not Accesible'});
+			console.log(err) ;
+		} ) ;
+	}
+
+	render()
+	{	//console.log(this.state) ;
+		let none = ((this.state.error.length > 1) ?'':'none') ;
 		return(
-			<div>this is FaceDetection.</div>
+			<div className="face-detect main">
+				<DetectContent title="Face Detection" onSubmit={this.onButtonSubmit}
+				text="All-Seeing Eye will human faces from your pictures" color={this.props.color}/>
+				<p className={'color-error '+none}> {this.state.error} </p>
+				<Image link={this.state.img} />
+				<FaceResult r={this.resRef} scroll={this.scrollToBottom} faces={this.state.faces} />	
+			</div>
 		) ;
 	}
 }

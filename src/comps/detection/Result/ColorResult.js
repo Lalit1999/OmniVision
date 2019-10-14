@@ -6,8 +6,8 @@ import './rescolor.css' ;
 class ColorResult extends Component {
 	createElements = () => {
 		//console.log(this.props.colors) ;
-		return this.props.colors.map(color=> <Box key={color.value} text1={color.value*100} 
-			text2={color.w3c.name} color={color.raw_hex}/>) ;
+		return this.props.colors.map(color=> <Box key={(color.value+' ').slice(0, 5) + ' %'} 
+			text1={color.value*100} text2={color.w3c.name} color={color.raw_hex}/>) ;
 	} 
 
 	render() {

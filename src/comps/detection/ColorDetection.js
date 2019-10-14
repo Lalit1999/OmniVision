@@ -42,12 +42,12 @@ class ColorDetection extends React.Component
 	}
 
 	render()
-	{	
+	{	let none = ((this.state.error.length > 1) ?'':'none') ;
 		return(
-			<div className="color">
+			<div className="color main">
 				<DetectContent title="Color Detection" onSubmit={this.onButtonSubmit}
 				text="All-Seeing Eye will detect colors in your pictures" color={this.props.color}/>
-				<p className="color-error"> {this.state.error} </p>
+				<p className={'color-error '+none}> {this.state.error} </p>
 				<Image link={this.state.img} />
 				<ColorResult r={this.resRef} scroll={this.scrollToBottom} colors={this.state.data} />
 			</div>

@@ -1,8 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
 
-.color
+.main
 {
 	text-align: center; 
 	margin-top: 15vh ;
 	font-family: 'Noto Sans', sans-serif;
+}
+
+.color-error
+{
+	color: darkred ;
+	border: 1px solid red;
+	background-color: lightcoral ;
+	display: inline-block;
+	border-radius: 0.3rem;
+	padding: 0.3em 0.5em ;
+}
+
+.none
+{
+	display: none ;
 }

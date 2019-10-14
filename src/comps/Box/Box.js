@@ -17,13 +17,26 @@ class Box extends Component {
 	} 
 
 	render() {
-		return (
-			<div className="box" style={{
+		let styleObj = {} ;
+		let middle = '' ;
+		if(this.props.color)
+		{	middle = this.props.color ;
+			styleObj = {
 				backgroundColor : this.props.color ,
 				color : this.calculateLightNess()  
-			}}>
-				<p className="t1"> {(this.props.text1 + ' ').slice(0, 5) + ' %' } </p>
-				<p className="tcolor"> {this.props.color} </p>
+			} ;
+		}
+		else if (this.props.middle)
+		{	middle = this.props.middle ;
+			styleObj = {
+				backgroundColor : 'rgba(255, 255, 255, 0.8)' ,
+				color: 'black'
+			} ;
+		}
+		return (
+			<div className="box" style={styleObj}>
+				<p className="t1"> {this.props.text1} </p>
+				<p className="tcolor"> {middle} </p>
 				<p className="t2"> {this.props.text2} </p> 
 			</div>
 		);
