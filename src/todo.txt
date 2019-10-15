@@ -15,3 +15,6 @@ login ka page ho gya...register ka page bhi ho gya hai
 
 dono me onclick fuction set karna hai
 aur register ki details check karni hai ki koi  kam toh nahi hai...aur use backend se bhi join karna hai.
+
+---------------------------------------------------
+error aaye toh image hatani hai.

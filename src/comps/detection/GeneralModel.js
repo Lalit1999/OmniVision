@@ -33,8 +33,8 @@ class GeneralModel extends React.Component
 		// console.log(Clarifai) ;
 		app.models.predict(Clarifai.GENERAL_MODEL, txt)
 		.then( data => {
-			console.log(data) ;
-			// this.setState({error: '', img: txt, data: data.outputs[0].data.colors});
+			// console.log(data.outputs[0].data.concepts) ;
+			this.setState({error: '', img: txt, data: data.outputs[0].data.concepts});
 		})
 		.catch( err => {
 			this.setState({error: 'Image URL Invalid or Image Not Accesible'});
@@ -43,7 +43,8 @@ class GeneralModel extends React.Component
 	}
 
 	render()
-	{	let none = ((this.state.error.length > 1) ?'':'none') ;
+	{	//console.log(this.state) ;
+		let none = ((this.state.error.length > 1) ?'':'none') ;
 		return(
 			<div className="color main">
 				<DetectContent title="Object Detection" onSubmit={this.onButtonSubmit}
