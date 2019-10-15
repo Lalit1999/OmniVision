@@ -26,7 +26,7 @@ class Header2 extends Component {
 
 	render() {
 		const {color} = this.props ;
-		// console.log(window.location.pathname) ;
+		console.log(window.location.pathname) ;
 		if(window.location.pathname === '/')
 		{
 			return null ;

@@ -11,8 +11,8 @@ class Home extends React.Component
 		return(
 			<div className="home-box">
 				<div className="left-box">
-					<HomeTile name="Faces" img="faces"/>
-					<HomeTile name="Colors" />
+					<HomeTile name="Faces" img="faces" link="/face" color={this.props.color}/>
+					<HomeTile name="Colors" img="colors" link="/color" color={this.props.color}/>
 				</div>
 				<div className="middle-box"> 
 			 		<img className="home-eye" alt="eye" src={Eye} />
@@ -23,8 +23,8 @@ class Home extends React.Component
 					<p className="home-msg">What will you detect?</p>
 				</div>
 				<div className="right-box">
-					<HomeTile name="Objects" />
-					<HomeTile name="Age & Gender" />
+					<HomeTile name="Objects" img="objects" link="/general" color={this.props.color}/>
+					<HomeTile name="Age & Gender" img="people" link="/age" color={this.props.color}/>
 				</div>
 			</div>
 		) ;

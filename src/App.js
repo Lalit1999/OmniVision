@@ -34,6 +34,9 @@ class App extends React.Component
   componentWillUnmount() {
     window.removeEventListener('resize', this.resize)
   }
+
+  // Create Age Model
+  
   render() 
   { const {color} = this.state ;
     return(
@@ -43,10 +46,10 @@ class App extends React.Component
           <div>
             <Header2 color={color}/>
             <Switch>
-              <Route path='/' exact component={Home} />
-              <Route path='/Color' exact render={props=><ColorDetection {...props} color={color} />}/>
-              <Route path='/Face' exact render={props=><FaceDetection {...props} color={color} />} />
-              <Route path='/General' exact render={props=><GeneralModel {...props} color={color} />} />
+              <Route path='/' exact render={props=><Home {...props} color={color} />} />
+              <Route path='/color' exact render={props=><ColorDetection {...props} color={color} />}/>
+              <Route path='/face' exact render={props=><FaceDetection {...props} color={color} />} />
+              <Route path='/general' exact render={props=><GeneralModel {...props} color={color} />} />
               <Route path='/login' exact component={Login} />
               <Route path='/register' exact component={Register} />
               <Route exact component={NotFound} />

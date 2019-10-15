@@ -20,9 +20,36 @@
 	background-color: rgba(255, 255, 255, 0.4) ;
 }
 
+.home-tile-link
+{
+	text-decoration: none ;
+	color: white;
+	padding: 0 .5em ;
+	border-radius: 9rem;
+	transform: scaleZ(1);
+}
+
 .faces
 {
 	background-image: url('../images/faces.jpg');
 	background-size: cover;
 	background-position: center;
+}
+
+.people
+{
+	background-size: cover;
+	background-image: url('../images/people.jpg');
+}
+
+.objects
+{
+	background-size: cover;
+	background-image: url('../images/objects.jpg');
+}
+
+.colors
+{
+	background-position: center;
+	background-image: url('../images/colors.jpg');
 }
