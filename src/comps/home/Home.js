@@ -11,18 +11,20 @@ class Home extends React.Component
 		return(
 			<div className="home-box">
 				<div className="left-box">
-					<HomeTile name="Face Detection" />
-					<HomeTile name="Color Detection" />
+					<HomeTile name="Faces" img="faces"/>
+					<HomeTile name="Colors" />
 				</div>
 				<div className="middle-box"> 
 			 		<img className="home-eye" alt="eye" src={Eye} />
 					<h2 className="home-title">
 						<span className="sp text-focus-in">OmniVision</span>
 					</h2>
+					<p className="home-msg">The All-Seeing Eye can detect various things in images</p>
+					<p className="home-msg">What will you detect?</p>
 				</div>
 				<div className="right-box">
-					<HomeTile name="Object Detection" />
-					<HomeTile name="More... " />
+					<HomeTile name="Objects" />
+					<HomeTile name="Age & Gender" />
 				</div>
 			</div>
 		) ;

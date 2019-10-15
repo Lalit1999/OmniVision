@@ -41,6 +41,7 @@
 	font-family: 'Roboto', sans-serif;
 	font-weight: 100 ;
 	margin-top: .3em ;
+	margin-bottom: .3em ;
 }
 
 .home-eye
@@ -52,6 +53,15 @@
 .home-eye:hover
 {
 	transform: rotate(360deg);
+}
+
+.home-msg
+{
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.8rem ;
+	text-align: center;
+	margin: 0.5em 0;
 }
 
 .sp {
