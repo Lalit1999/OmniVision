@@ -30,9 +30,10 @@ class GeneralModel extends React.Component
 
 	onButtonSubmit = (txt) => {
 		//console.log(txt) ;
-		app.models.predict(Clarifai.General_MODEL, txt)
+		// console.log(Clarifai) ;
+		app.models.predict(Clarifai.GENERAL_MODEL, txt)
 		.then( data => {
-			console.log(data.outputs[0].data.colors) ;
+			console.log(data) ;
 			// this.setState({error: '', img: txt, data: data.outputs[0].data.colors});
 		})
 		.catch( err => {
