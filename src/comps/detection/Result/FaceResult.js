@@ -15,11 +15,11 @@ class FaceResult extends Component {
 			return (
 				<div key={item.race.id} className="face-con">
 					<div className="face-box" style={{
-						width: (item.face.right_col - item.face.left_col)*300 ,
-						height: (item.face.bottom_row - item.face.top_row)*300
+						width: (item.face.right_col - item.face.left_col)*this.props.wdt ,
+						height: (item.face.bottom_row - item.face.top_row)*this.props.ht
 					}}> Face </div>
 					<Box key={item.race.id} middle="Accuracy :" text1={item.race.name}
-								text2={(item.race.value+' ').slice(0, 5) + ' %'}/>
+								text2={((item.race.value*100)+' ').slice(0, 5) + ' %'}/>
 				</div>
 			) ;
 		}) ;

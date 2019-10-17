@@ -1,15 +1,16 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom' ;
 
+import Header2 from './comps/header2/Header2.js' ;
 import Home from './comps/home/Home.js' ;
+import BackGround from './comps/BackGround/BackGround.js' ;
 import NotFound from './comps/home/NotFound.js' ;
 import ColorDetection from './comps/detection/ColorDetection.js' ;
 import FaceDetection from './comps/detection/FaceDetection.js' ;
 import GeneralModel from './comps/detection/GeneralModel.js' ;
+import AgeGenderModel from './comps/detection/AgeGenderModel.js' ;
 import Login from './comps/Login/Login.js' ;
 import Register from './comps/Login/Register.js' ;
-import Header2 from './comps/header2/Header2.js' ;
-import BackGround from './comps/BackGround/BackGround.js' ;
 import './App.css';
 
 class App extends React.Component
@@ -50,6 +51,7 @@ class App extends React.Component
               <Route path='/color' exact render={props=><ColorDetection {...props} color={color} />}/>
               <Route path='/face' exact render={props=><FaceDetection {...props} color={color} />} />
               <Route path='/general' exact render={props=><GeneralModel {...props} color={color} />} />
+              <Route path='/age' exact render={props=><AgeGenderModel {...props} color={color} />} />
               <Route path='/login' exact component={Login} />
               <Route path='/register' exact component={Register} />
               <Route exact component={NotFound} />

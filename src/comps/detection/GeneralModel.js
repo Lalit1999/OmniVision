@@ -37,7 +37,7 @@ class GeneralModel extends React.Component
 			this.setState({error: '', img: txt, data: data.outputs[0].data.concepts});
 		})
 		.catch( err => {
-			this.setState({error: 'Image URL Invalid or Image Not Accesible'});
+			this.setState({error: 'Image URL Invalid or Image Not Accesible', img:'', data: []});
 			console.log(err) ;
 		} ) ;
 	}

@@ -16,7 +16,9 @@ class FaceDetection extends React.Component
 		this.state = {
 			error: '' ,
 			img : '' ,
-			faces : [] 
+			faces : [] ,
+			imgHeight : 0 ,
+			imgWidth : 0 ,
 		} ;
 	}
 
@@ -28,16 +30,23 @@ class FaceDetection extends React.Component
 		this.scrollToBottom() ;
 	}
 
+	getImageSize = (h, w) => {
+		this.setState({imgHeight: h, imgWidth: w}) ;
+	}
+
 	onButtonSubmit = (txt) => {
 		//console.log(txt) ;
 		//console.log(Clarifai) ;
 		app.models.predict(Clarifai.DEMOGRAPHICS_MODEL, txt)
 		.then( data => {
 			// console.log(data.outputs[0].data.regions) ;
-			this.setState({error: '', img: txt, faces: data.outputs[0].data.regions});
+			if(data.outputs[0].data.regions)
+				this.setState({error: '', img: txt, faces: data.outputs[0].data.regions});
+			else
+				this.setState({error: 'Image has no detectable faces', img:'', faces: []});
 		})
 		.catch( err => {
-			this.setState({error: 'Image URL Invalid or Image Not Accesible'});
+			this.setState({error: 'Image URL Invalid or Image Not Accesible', img:'', faces: []});
 			console.log(err) ;
 		} ) ;
 	}
@@ -50,8 +59,9 @@ class FaceDetection extends React.Component
 				<DetectContent title="Face Detection" onSubmit={this.onButtonSubmit}
 				text="All-Seeing Eye will human faces from your pictures" color={this.props.color}/>
 				<p className={'color-error '+none}> {this.state.error} </p>
-				<Image link={this.state.img} />
-				<FaceResult r={this.resRef} scroll={this.scrollToBottom} faces={this.state.faces} />	
+				<Image link={this.state.img} load={this.getImageSize}/>
+				<FaceResult r={this.resRef} scroll={this.scrollToBottom} faces={this.state.faces} 
+					wdt={this.state.imgWidth} ht={this.state.imgHeight} url={this.state.img}/>	
 			</div>
 		) ;
 	}

@@ -9,3 +9,17 @@
 	display: inline-block;
 	/*border: 1px solid black;*/
 }
+
+.imag
+{	margin: auto ;
+	display: inline-block;
+	transition: all .5s ;
+	max-width: 85vw;
+	max-height: 80vh;
+}
+
+.imag:hover
+{
+	box-shadow: 1px 1px 6px 0 rgba(0,0,0,0.4);
+	border-radius: 2rem ;
+}

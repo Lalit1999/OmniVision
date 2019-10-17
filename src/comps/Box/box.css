@@ -1,6 +1,6 @@
 .box
 {
-	margin: .5em 1em ;
+	margin: 0 1em .5em 1em ;
 	padding: .3em .4em ;
 	border-radius: .5rem ;
 	min-width: 130px;
