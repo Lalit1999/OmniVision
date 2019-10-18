@@ -8,9 +8,9 @@
 
 .face-box
 {
-	background-color: white ;
 	border-radius: .5rem ;
 	margin: 0.1em auto ;
+	background-repeat: no-repeat;
 }
 
 .face-con
