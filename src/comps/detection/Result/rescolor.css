@@ -11,10 +11,12 @@
 	border-radius: .5rem ;
 	margin: 0.1em auto ;
 	background-repeat: no-repeat;
+	/*background-size: cover;*/
 }
 
 .face-con
 {
 	text-align: center;
+	margin: 2px;
 	/*border: 1px solid black ;*/
 }
