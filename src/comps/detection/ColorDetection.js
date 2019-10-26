@@ -21,7 +21,9 @@ class ColorDetection extends React.Component
 	}
 
 	scrollToBottom = () => {
+		console.log('up') ;
 	    this.resRef.current.scrollIntoView({ behavior: 'smooth' })
+		console.log('up2') ;
 	}
 
 	componentDidUpdate = () => {

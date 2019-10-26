@@ -1,23 +1,17 @@
-1. Face dikhane ka kuch jugaad dhundo
+1. Login /Register ki validations ...? (done probably)
 
-2. Login /Register ki validations
+2. Create AgeGenderModel Conponent
 
 3. Create LoginMenu Component..(after user login)
 
-... Send color2(black/white through background)...?
-... LoginPop banana hai shayad
 
 -------------------------------------------
 Lalit (4-9-2019)
-login ka page ho gya...register ka page bhi ho gya hai
+login ka page... ho gya...
+register ka page bhi... ho gya hai
 
 dono me onclick fuction set karna hai
-aur register ki details check karni hai ki koi  kam toh nahi hai...aur use backend se bhi join karna hai.
 
----------------------------------------------------
+register ki details check karni hai ki koi  kam toh nahi hai...
 
-https://cdn.vox-cdn.com/thumbor/1ck1fQL62j2GaDvOlnJu4fyuIIc=/0x0:3049x2048/1200x800/filters:focal(1333x1562:1819x2048)/cdn.vox-cdn.com/uploads/chorus_image/image/63058104/fake_ai_faces.0.png
-
-this image is creating some bug...iski tehkikat karo...
-
-uske baad bas face hi dikhana hai
+use backend se bhi join karna hai...ho gaya hai.
