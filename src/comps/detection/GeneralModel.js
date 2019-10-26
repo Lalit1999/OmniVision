@@ -51,7 +51,7 @@ class GeneralModel extends React.Component
 				text="All-Seeing Eye will detect objects in your pictures" color={this.props.color}/>
 				<p className={'color-error '+none}> {this.state.error} </p>
 				<Image link={this.state.img} />
-				<GeneralResult r={this.resRef} scroll={this.scrollToBottom} concepts={this.state.data} />
+				<GeneralResult r={this.resRef} concepts={this.state.data} />
 			</div>
 		) ;
 	}

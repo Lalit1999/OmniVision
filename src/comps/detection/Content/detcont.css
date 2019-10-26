@@ -17,6 +17,7 @@
 	border-bottom-left-radius: 1rem ;
 	border: 1px solid white ;
 	transition: color 2s ;
+	width: 35vw;
 }
 
 .input-con input::selection

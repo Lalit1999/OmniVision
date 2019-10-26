@@ -5,39 +5,36 @@ import Box from '../../Box/Box.js' ;
 class FaceResult extends Component {
 
 	sepArr = () => {
-		//console.log(this.props.faces) ;
 		let arr = this.props.faces.map(f=> {
 			return {face: f.region_info.bounding_box, 
 				race: f.data.face.multicultural_appearance.concepts[0]} ;
 			} ) ;
-		console.log(arr, this.props.wdt, this.props.ht) ;
+		// console.log(arr) ;
 		return arr.map((item, i) => {
-			const {url, wdt, ht} = this.props ;
+			const {url, h, w} = this.props ;
 			
-			let lC = item.face.left_col * wdt ;
-		    let tR = item.face.top_row * ht ;
-		    let rC = (item.face.right_col * wdt) ;
-		    let bR = (item.face.bottom_row * ht) ;
+		    let lC = (item.face.left_col * w) ;
+		    let tR = (item.face.top_row * h) ;
+		    let rC = (item.face.right_col * w) ;
+		    let bR = (item.face.bottom_row * h) ;
 
 		    const imgW = (rC - lC);
 		    const imgH = (bR - tR);
-		    
-		    console.log(lC, rC, tR, bR) ;
-		    console.log(imgW, imgH) ;
-			
-			let xStr = ((lC/wdt)*100*1.49+'').slice(0, 5)+'%' ;
-			let yStr = ((tR/ht)*100*1.49+'').slice(0, 5)+'%' ;
-			console.log(xStr+' '+ yStr) ;
-			
+
+		    const lStr = '-'+(lC+'').slice(0, 5)+'px' ;
+		    const tStr = '-'+(tR+'').slice(0, 5)+'px' ;
+
 			return (
 				<div key={i} className="face-con">
 					<div className="face-box" style={{
-						width: imgW ,
-						height: imgH ,
-						backgroundImage: "url(\""+ url +"\")" ,
-						backgroundPosition: xStr+' '+ yStr,
-						backgroundSize: wdt+'px '+ht+'px'
-					}}> &nbsp; </div>
+						textIndent : lStr ,
+						maxWidth : imgW ,
+						maxHeight : imgH 
+					}}> 
+						<img src={url} alt="face" style={{
+							marginTop : tStr
+						}}/>
+					</div>
 					<Box key={item.race.id} middle="Accuracy :" text1={item.race.name}
 								text2={((item.race.value*100)+' ').slice(0, 5) + ' %'}/>
 				</div>

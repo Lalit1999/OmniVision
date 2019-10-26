@@ -10,11 +10,21 @@ class Image extends Component {
 			this.props.load(event.target.height, event.target.width) ;
 	}
 
+	onDummyLoad = (event) => {
+		// console.log(event.target.width) ;
+		// console.log(event.target.height) ;
+		if(this.props.dummy)
+			this.props.dummy(event.target.height, event.target.width) ;
+	}
+
 	createImage = () => {
 		if(this.props.link.length > 0)
-			// return <div style={{backgroundImage:'url('+this.props.link+')'}} className="img-div"></div>
-			return <img className="imag" src={this.props.link} 
-						alt="Detected" onLoad={this.onImageLoad}/> ;
+			return (
+				<div>
+					<img className="imag" src={this.props.link} alt="Detected" onLoad={this.onImageLoad}/> 
+					<img className="dummy" src={this.props.link} alt="dummy" onLoad={this.onDummyLoad} />
+				</div>
+			);
 	} 
 
 	render() {

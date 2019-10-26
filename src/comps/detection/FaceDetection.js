@@ -19,6 +19,8 @@ class FaceDetection extends React.Component
 			faces : [] ,
 			imgHeight : 0 ,
 			imgWidth : 0 ,
+			dumHeight : 0 ,
+			dumWidth : 0
 		} ;
 	}
 
@@ -27,6 +29,7 @@ class FaceDetection extends React.Component
 	}
 
 	componentDidUpdate = () => {
+		console.log('Updated')
 		this.scrollToBottom() ;
 	}
 
@@ -34,9 +37,11 @@ class FaceDetection extends React.Component
 		this.setState({imgHeight: h, imgWidth: w}) ;
 	}
 
+	getDummySize = (h, w) => {
+		this.setState({dumHeight: h, dumWidth: w}) ;
+	}
+
 	onButtonSubmit = (txt) => {
-		//console.log(txt) ;
-		//console.log(Clarifai) ;
 		app.models.predict(Clarifai.DEMOGRAPHICS_MODEL, txt)
 		.then( data => {
 			// console.log(data.outputs[0].data.regions) ;
@@ -52,16 +57,16 @@ class FaceDetection extends React.Component
 	}
 
 	render()
-	{	//console.log(this.state) ;
+	{	
 		let none = ((this.state.error.length > 1) ?'':'none') ;
 		return(
 			<div className="face-detect main">
 				<DetectContent title="Face Detection" onSubmit={this.onButtonSubmit}
 				text="All-Seeing Eye will human faces from your pictures" color={this.props.color}/>
 				<p className={'color-error '+none}> {this.state.error} </p>
-				<Image link={this.state.img} load={this.getImageSize}/>
-				<FaceResult r={this.resRef} scroll={this.scrollToBottom} faces={this.state.faces} 
-					wdt={this.state.imgWidth} ht={this.state.imgHeight} url={this.state.img}/>	
+				<Image link={this.state.img} load={this.getImageSize} dummy={this.getDummySize}/>
+				<FaceResult r={this.resRef} faces={this.state.faces} url={this.state.img}
+					h={this.state.dumHeight} w={this.state.dumWidth}/>	
 			</div>
 		) ;
 	}
