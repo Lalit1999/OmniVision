@@ -1,8 +1,11 @@
 1. Login /Register ki validations ...? (done probably)
 
-2. Create AgeGenderModel Conponent
+2. Create AgeGenderResult Component
+3. Give Demo Images while Detection
+4. Give Option of uploading image while detection
 
-3. Create LoginMenu Component..(after user login)
+5. Send Request to backend whenever we detect
+6. Create LoginMenu Component..(after user login)
 
 
 -------------------------------------------

@@ -17,8 +17,6 @@ class FaceDetection extends React.Component
 			error: '' ,
 			img : '' ,
 			faces : [] ,
-			imgHeight : 0 ,
-			imgWidth : 0 ,
 			dumHeight : 0 ,
 			dumWidth : 0
 		} ;
@@ -29,12 +27,7 @@ class FaceDetection extends React.Component
 	}
 
 	componentDidUpdate = () => {
-		console.log('Updated')
 		this.scrollToBottom() ;
-	}
-
-	getImageSize = (h, w) => {
-		this.setState({imgHeight: h, imgWidth: w}) ;
 	}
 
 	getDummySize = (h, w) => {
@@ -62,9 +55,9 @@ class FaceDetection extends React.Component
 		return(
 			<div className="face-detect main">
 				<DetectContent title="Face Detection" onSubmit={this.onButtonSubmit}
-				text="All-Seeing Eye will human faces from your pictures" color={this.props.color}/>
+				text="All-Seeing Eye will detect human faces in your pictures" color={this.props.color}/>
 				<p className={'color-error '+none}> {this.state.error} </p>
-				<Image link={this.state.img} load={this.getImageSize} dummy={this.getDummySize}/>
+				<Image link={this.state.img} dummy={this.getDummySize}/>
 				<FaceResult r={this.resRef} faces={this.state.faces} url={this.state.img}
 					h={this.state.dumHeight} w={this.state.dumWidth}/>	
 			</div>

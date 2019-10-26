@@ -3,16 +3,8 @@ import React, { Component } from 'react';
 import './image.css' ;
 
 class Image extends Component {
-	onImageLoad = (event) => {
-		// console.log(event.target.width) ;
-		// console.log(event.target.height) ;
-		if(this.props.load)
-			this.props.load(event.target.height, event.target.width) ;
-	}
 
 	onDummyLoad = (event) => {
-		// console.log(event.target.width) ;
-		// console.log(event.target.height) ;
 		if(this.props.dummy)
 			this.props.dummy(event.target.height, event.target.width) ;
 	}
