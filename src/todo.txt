@@ -1,6 +1,5 @@
 1. Login /Register ki validations ...? (done probably)
 
-2. Create AgeGenderResult Component
 3. Give Demo Images while Detection
 4. Give Option of uploading image while detection
 
