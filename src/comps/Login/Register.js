@@ -6,38 +6,24 @@ class Register extends Component
 	constructor(props)
 	{
 		super(props) ;
-		if(this.props.ob)
-		{	const {user, pw, rpw, mob, email} = this.props.ob ;
-			this.state = {
-	      		user : user ,
-	     		pw : pw ,
-	     		rpw: rpw ,
-	      		mob : mob ,
-	      		email : email ,
-			} ;
-		}
-		else
-		{
-			this.state = {
-				name : '' ,
-				realname : '' ,
-				link : '' ,
-				biglink : '' ,
-				error : ''
-			} ;
-		}
+		this.state = {
+      		username : '' ,
+     		pw : '' ,
+      		rpw : '' ,
+      		error: 
+		} ;
 	}
 
 	onInputChange = (event) => {
-		if(event.target.name === 'user')
+		if(event.target.name === 'username')
 		{
 			if(event.target.value === '')
-				this.setState({error: 'User Name can not be blank'}) ;
-			else if (this.props.user.includes(event.target.value.toLowerCase()))
-				this.setState({error: 'user Name must be unique'}) ;
+				this.setState({error: 'Username Name can not be blank'}) ;
+			else if (this.username.includes(event.target.value.toLowerCase()))
+				this.setState({error: 'username Name must be unique'}) ;
 			else 
 				this.setState({error: ''}) ;
-			this.setState({user : event.target.value}) ;
+			this.setState({username : event.target.value}) ;
 		}
 		else if(event.target.name === 'pw')
 		{
@@ -47,7 +33,7 @@ class Register extends Component
 				this.setState({error: ''}) ;
 			this.setState({pw : event.target.value}) ;
 		}
-		else if (event.taarget.name === 'rpw')
+		else if (event.target.name === 'rpw')
 		{
 			if(event.target.value === '')
 				this.setState({error: 'password can not be blank'}) ;
@@ -57,22 +43,7 @@ class Register extends Component
 				this.setState({error: ''}) ;
 			this.setState({rpw : event.target.value}) ;
 		}
-		else if (event.taarget.name === 'mob')
-		{
-			if(event.target.value === '')
-				this.setState({error: 'Mobile can not be blank'}) ;
-			else 
-				this.setState({error: ''}) ;
-			this.setState({mob : event.target.value}) ;
-		}
-		else if (event.taarget.name === 'email')
-		{
-			if(event.target.value === '')
-				this.setState({error: 'Email can not be blank'}) ;
-			else 
-				this.setState({error: ''}) ;
-			this.setState({email : event.target.value}) ;
-		}
+		
 	}
 	render() 
 	{
@@ -84,9 +55,9 @@ class Register extends Component
 				  <p className = 'error'>{this.state.error}</p>
 
 	              <div>
-	                <label className="lbel">User Name : </label>
-	                <input  className="inpu" type="text" name="user" onChange={this.onInputChange} 
-	                		value={this.state.user} />
+	                <label className="lbel">Username Name : </label>
+	                <input  className="inpu" type="text" name="username" onChange={this.onInputChange} 
+	                		value={this.state.username} />
 	              </div>
 	              <div>
 	                <label className="lbel">Password : </label>
@@ -98,16 +69,7 @@ class Register extends Component
 	                <input className="inpu" type="password"  name="rpw" onChange={this.onInputChange}
 	                		 value={this.state.rpw} />
 	              </div>
-	              <div>
-	              	<label className="lbel">Mobile no. : </label>
-	                <input  className="inpu" type="text" name="mob" onChange={this.onInputChange} 
-	                		value={this.state.mob} />
-	              </div>
-	              <div>
-	              	<label className="lbel">Email-ID : </label>
-	                <input  className="inpu" type="text" name="email" onChange={this.onInputChange} 
-	                		value={this.state.email} />
-	              </div>
+	              
 	              <div className="btn-cona">
 	                <button > Submit </button> 
 	                
@@ -118,9 +80,4 @@ class Register extends Component
 	}
 }
 
-export default Register ;
-
-
-	// let nam = document.getElementByName('name') ;
-	// let btn = document.getElementById('btn-cona') ;
-	// let pass = document.getElementByName() ;
+export default Register ;	
