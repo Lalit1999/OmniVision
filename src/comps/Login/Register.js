@@ -10,7 +10,7 @@ class Register extends Component
       		username : '' ,
      		pw : '' ,
       		rpw : '' ,
-      		error: 
+      		error: ''
 		} ;
 	}
 
@@ -19,8 +19,6 @@ class Register extends Component
 		{
 			if(event.target.value === '')
 				this.setState({error: 'Username Name can not be blank'}) ;
-			else if (this.username.includes(event.target.value.toLowerCase()))
-				this.setState({error: 'username Name must be unique'}) ;
 			else 
 				this.setState({error: ''}) ;
 			this.setState({username : event.target.value}) ;
