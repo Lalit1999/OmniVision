@@ -28,6 +28,11 @@ class ColorDetection extends React.Component
 		this.scrollToBottom() ;
 	}
 
+	onSampleImageClick = (obj) => {
+		// console.log(obj) ;
+		this.setState({error: '', img: obj.link, data: obj.data});
+	}
+
 	onButtonSubmit = (txt) => {
 		//console.log(txt) ;
 		app.models.predict(Clarifai.COLOR_MODEL, txt)
@@ -46,7 +51,8 @@ class ColorDetection extends React.Component
 		return(
 			<div className="color main">
 				<DetectContent title="Color Detection" onSubmit={this.onButtonSubmit}
-				text="All-Seeing Eye will detect colors in your pictures" color={this.props.color}/>
+				text="All-Seeing Eye will detect colors in your pictures" color={this.props.color}
+				onSampleImageClick={this.onSampleImageClick}/>
 				<p className={'color-error '+none}> {this.state.error} </p>
 				<Image link={this.state.img} />
 				<ColorResult r={this.resRef} scroll={this.scrollToBottom} colors={this.state.data} />

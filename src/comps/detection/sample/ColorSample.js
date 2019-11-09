@@ -259,7 +259,7 @@ const col_sample = [
   }
 ]
 },
-{ 	link : "https://wallpaperplay.com/walls/full/b/e/c/312128.jpg"
+{ 	link : "https://wallpaperplay.com/walls/full/b/e/c/312128.jpg" ,
 	data : [
   {
     "raw_hex": "#6b9f2c",
@@ -319,7 +319,7 @@ const col_sample = [
   }
 ]
 },
-{ 	link : "https://wallpapercave.com/wp/9AC0uG4.jpg"
+{ 	link : "https://wallpapercave.com/wp/9AC0uG4.jpg" ,
 	data : [
   {
     "raw_hex": "#c3bfa9",
@@ -363,7 +363,7 @@ const col_sample = [
   }
 ]
 },
-{ 	link : "https://wallpaperplay.com/walls/full/4/d/5/196265.jpg"
+{ 	link : "https://wallpaperplay.com/walls/full/4/d/5/196265.jpg",
 	data : [
   {
     "raw_hex": "#373c22",
@@ -431,7 +431,7 @@ const col_sample = [
   }
 ]
 },
-{ 	link : "https://wallpaperplay.com/walls/full/f/b/d/196311.jpg"
+{ 	link : "https://wallpaperplay.com/walls/full/f/b/d/196311.jpg",
 	data : [
   {
     "raw_hex": "#6b268e",
@@ -499,7 +499,7 @@ const col_sample = [
   }
 ]
 },
-{ 	link : "https://wallpaperplay.com/walls/full/d/d/e/196290.jpg"
+{ 	link : "https://wallpaperplay.com/walls/full/d/d/e/196290.jpg",
 	data : [
   {
     "raw_hex": "#52b0c9",
