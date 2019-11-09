@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import ContentChoice from '../../choice/ContentChoice.js' ;
 import './detcont.css' ;
 
 class DetectContent extends Component {
@@ -25,12 +26,17 @@ class DetectContent extends Component {
 				<h3 className="detcont-subtitle" 
 				 style={ {textShadow: '-3px -3px 0 '+color+', 3px -3px 0 '+color+', -3px 3px 0 '+color+', 3px 3px 0 '+color+''} }>
 				 {this.props.text} </h3>
-				<div className="input-con" >
-					<input type="text" style={{color: color}}
-						onChange={this.onInputChange} value={this.state.input}/>
-					<button style={ {backgroundColor: color} } 
-						onClick={() => this.props.onSubmit(this.state.input)}> Detect </button>
-				</div>
+				<ContentChoice choices={['Sample', 'Input-URL', 'Upload']} color={this.props.color}
+				 Sample={<div> This is a Type-1 Query</div>}
+				 Input-URL={
+				 	<div className="input-con" >
+						<input type="text" style={{color: color}}
+							onChange={this.onInputChange} value={this.state.input}/>
+						<button style={ {backgroundColor: color} } 
+							onClick={() => this.props.onSubmit(this.state.input)}> Detect </button>
+					</div>}
+				 Upload={<div> Coming Soon !</div>}
+				/>
 			</div>
 		);
 	}

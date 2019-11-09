@@ -21,9 +21,7 @@ class ColorDetection extends React.Component
 	}
 
 	scrollToBottom = () => {
-		console.log('up') ;
 	    this.resRef.current.scrollIntoView({ behavior: 'smooth' })
-		console.log('up2') ;
 	}
 
 	componentDidUpdate = () => {
@@ -34,7 +32,7 @@ class ColorDetection extends React.Component
 		//console.log(txt) ;
 		app.models.predict(Clarifai.COLOR_MODEL, txt)
 		.then( data => {
-			//console.log(data.outputs[0].data.colors) ;
+			// console.log(data.outputs[0].data.colors) ;
 			this.setState({error: '', img: txt, data: data.outputs[0].data.colors});
 		})
 		.catch( err => {
