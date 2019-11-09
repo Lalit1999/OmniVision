@@ -27,8 +27,6 @@ class Login extends Component
 		{
 			if(event.target.value === '')
 				this.setState({error: 'password can not be blank'}) ;
-			else if (event.target.value !== this.state.pw )
-				this.setState({error: 'Password does not match'}) ;
 			else 
 				this.setState({error: ''}) ;
 			this.setState({pw : event.target.value}) ;
