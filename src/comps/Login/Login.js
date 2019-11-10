@@ -39,7 +39,7 @@ class Login extends Component
 			name : this.state.username ,
 			pw : this.state.pw
 		} ;
-		fetch('https://ov-api.herokuapp.com/register',{
+		fetch('https://ov-api.herokuapp.com/login',{
 			method : 'post' ,
 			headers : { 'Content-Type' : 'application/json'} ,
 			body :JSON.stringify(obj) ,
