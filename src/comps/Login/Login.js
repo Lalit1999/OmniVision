@@ -35,6 +35,17 @@ class Login extends Component
 	}
 	OnButtonClick = () => {
 		console.log("button clicked") ;
+		fetch('https://ov-api.herokuapp.com/register',{
+			method : 'post' ,
+			headers : { 'Content-Type' : 'application/json'} ,
+			body :JSON.stringify(obj) ,
+		})
+		.then(res => {
+			if(res.ok)
+				return res.json() ;
+			else
+				throw Error(res.statusText) ;
+		})
 	}
 
   	render() {
