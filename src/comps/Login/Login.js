@@ -50,6 +50,11 @@ class Login extends Component
 			else
 				throw Error(res.statusText) ;
 		})
+		.then(data =>{	
+			//user ko login karake state update karani hai 
+			console.log(data) ;
+		}) 
+		.catch( err  => console.log(err) ) ;
 	}
 
   	render() {

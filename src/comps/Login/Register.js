@@ -61,6 +61,12 @@ class Register extends Component
 			else
 				throw Error(res.statusText) ;
 		})
+		.then(data => {	
+			//show if registered or not
+			 console.log(data) ;
+		}) 
+		.catch( err  => console.log(err) ) ;
+
 	}
 	render() 
 	{
