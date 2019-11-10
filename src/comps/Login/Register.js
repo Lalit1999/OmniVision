@@ -44,6 +44,20 @@ class Register extends Component
 		}
 		
 	}
+	onButtonClick = () => {
+		console.log("button clicked") ;
+		fetch('https://ov-api.herokuapp.com/register',{
+			method : 'post' ,
+			headers : { 'Content-Type' : 'application/json'} ,
+			body :JSON.stringify(obj) ,
+		})
+		.then(res => {
+			if(res.ok)
+				return res.json() ;
+			else
+				throw Error(res.statusText) ;
+		})
+	}
 	render() 
 	{
 		
@@ -70,7 +84,7 @@ class Register extends Component
 	              </div>
 	              
 	              <div className="btn-cona">
-	                <button > Sign-up </button> 
+	                <button onClick={this.onButtonClick} > Sign-up </button> 
 	                <Link className="btn-con2" to = '/login'>Sign-in</Link> 
 
 	              </div>

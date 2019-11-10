@@ -33,6 +33,9 @@ class Login extends Component
 		}
 		
 	}
+	OnButtonClick = () => {
+		console.log("button clicked") ;
+	}
 
   	render() {
 		return (
@@ -49,7 +52,7 @@ class Login extends Component
 	                <input className="inp" type="password" onChange={this.onPwChange} name="name" value={this.state.pw}/>
 	              </div>
 	              <div className="btn-con">
-	                <button onClick={this.checkUser}> Sign-in </button> 
+	                <button onClick={this.OnButtonClick}> Sign-in </button> 
 	                <Link className="btn-con2" to = '/register'>Sign-up</Link> 
 	              </div>
 	            </div>
