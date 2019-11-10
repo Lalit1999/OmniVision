@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom' ;
 import './Register.css' ;
 
 class Register extends Component 
@@ -53,7 +54,7 @@ class Register extends Component
 				  <p className = 'error'>{this.state.error}</p>
 
 	              <div>
-	                <label className="lbel">Username Name : </label>
+	                <label className="lbel">UserName : </label>
 	                <input  className="inpu" type="text" name="username" onChange={this.onInputChange} 
 	                		value={this.state.username} />
 	              </div>
@@ -69,8 +70,9 @@ class Register extends Component
 	              </div>
 	              
 	              <div className="btn-cona">
-	                <button > Submit </button> 
-	                
+	                <button > Sign-up </button> 
+	                <Link className="btn-con2" to = '/login'>Sign-in</Link> 
+
 	              </div>
 	            </div>
 			</div>     

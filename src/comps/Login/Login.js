@@ -50,7 +50,7 @@ class Login extends Component
 	              </div>
 	              <div className="btn-con">
 	                <button onClick={this.checkUser}> Sign-in </button> 
-	                <Link className="btn-con2" to = '/register'>Register</Link> 
+	                <Link className="btn-con2" to = '/register'>Sign-up</Link> 
 	              </div>
 	            </div>
 			</div>          
