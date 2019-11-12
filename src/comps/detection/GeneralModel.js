@@ -3,6 +3,7 @@ import Clarifai from 'clarifai' ;
 
 import DetectContent from './Content/DetectContent.js' ;
 import Image from '../Image/Image.js' ;
+import gen_sample from './sample/GeneralSample.js' ;
 import GeneralResult from './Result/GeneralResult.js' ;
 import './colordetect.css' ;
 
@@ -28,9 +29,13 @@ class GeneralModel extends React.Component
 		this.scrollToBottom() ;
 	}
 
+	onSampleImageClick = (obj) => {
+		// console.log(obj) ;
+		this.setState({error: '', img: obj.link, data: obj.data});
+	}
+
 	onButtonSubmit = (txt) => {
 		//console.log(txt) ;
-		// console.log(Clarifai) ;
 		app.models.predict(Clarifai.GENERAL_MODEL, txt)
 		.then( data => {
 			// console.log(data.outputs[0].data.concepts) ;
@@ -47,8 +52,9 @@ class GeneralModel extends React.Component
 		let none = ((this.state.error.length > 1) ?'':'none') ;
 		return(
 			<div className="color main">
-				<DetectContent title="Object Detection" onSubmit={this.onButtonSubmit}
-				text="All-Seeing Eye will detect objects in your pictures" color={this.props.color}/>
+				<DetectContent title="Object Detection" onSubmit={this.onButtonSubmit} 
+				text="All-Seeing Eye will detect objects in your pictures" color={this.props.color}
+				onSampleImageClick={this.onSampleImageClick} data={gen_sample}/>
 				<p className={'color-error '+none}> {this.state.error} </p>
 				<Image link={this.state.img} />
 				<GeneralResult r={this.resRef} concepts={this.state.data} />

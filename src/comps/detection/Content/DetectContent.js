@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import ContentChoice from '../../choice/ContentChoice.js' ;
 import SampleImage from '../sample/SampleImage.js' ;
-import col_sample from '../sample/ColorSample.js' ;
 import './detcont.css' ;
 
 class DetectContent extends Component {
@@ -29,7 +28,7 @@ class DetectContent extends Component {
 				 style={ {textShadow: '-3px -3px 0 '+color+', 3px -3px 0 '+color+', -3px 3px 0 '+color+', 3px 3px 0 '+color+''} }>
 				 {this.props.text} </h3>
 				<ContentChoice choices={['Sample', 'Input-URL', 'Upload']} color={this.props.color}
-				 Sample={<SampleImage data={col_sample} onImageClick={this.props.onSampleImageClick}/>}
+				 Sample={<SampleImage data={this.props.data} onImageClick={this.props.onSampleImageClick}/>}
 				 Input-URL={
 				 	<div className="input-con" >
 						<input type="text" style={{color: color}}

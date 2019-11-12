@@ -3,6 +3,7 @@ import Clarifai from 'clarifai' ;
 
 import DetectContent from './Content/DetectContent.js' ;
 import Image from '../Image/Image.js' ;
+import col_sample from './sample/ColorSample.js' ;
 import ColorResult from './Result/ColorResult.js' ;
 import './colordetect.css' ;
 
@@ -52,7 +53,7 @@ class ColorDetection extends React.Component
 			<div className="color main">
 				<DetectContent title="Color Detection" onSubmit={this.onButtonSubmit}
 				text="All-Seeing Eye will detect colors in your pictures" color={this.props.color}
-				onSampleImageClick={this.onSampleImageClick}/>
+				onSampleImageClick={this.onSampleImageClick} data={col_sample}/>
 				<p className={'color-error '+none}> {this.state.error} </p>
 				<Image link={this.state.img} />
 				<ColorResult r={this.resRef} scroll={this.scrollToBottom} colors={this.state.data} />

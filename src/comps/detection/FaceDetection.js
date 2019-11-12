@@ -3,6 +3,7 @@ import Clarifai from 'clarifai' ;
 
 import DetectContent from './Content/DetectContent.js' ;
 import Image from '../Image/Image.js' ;
+import face_sample from './sample/FaceSample.js' ;
 import FaceResult from './Result/FaceResult.js' ;
 import './facedetect.css' ;
 
@@ -24,6 +25,11 @@ class FaceDetection extends React.Component
 
 	scrollToBottom = () => {
 	    this.resRef.current.scrollIntoView({ behavior: 'smooth' })
+	}
+
+	onSampleImageClick = (obj) => {
+		// console.log(obj) ;
+		this.setState({error: '', img: obj.link, faces: obj.data});
 	}
 
 	componentDidUpdate = () => {
@@ -55,7 +61,8 @@ class FaceDetection extends React.Component
 		return(
 			<div className="face-detect main">
 				<DetectContent title="Face Detection" onSubmit={this.onButtonSubmit}
-				text="All-Seeing Eye will detect human faces in your pictures" color={this.props.color}/>
+				text="All-Seeing Eye will detect human faces in your pictures" color={this.props.color}
+				onSampleImageClick={this.onSampleImageClick} data={face_sample}/>
 				<p className={'color-error '+none}> {this.state.error} </p>
 				<Image link={this.state.img} dummy={this.getDummySize}/>
 				<FaceResult r={this.resRef} faces={this.state.faces} url={this.state.img}
