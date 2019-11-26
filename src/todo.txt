@@ -1,19 +1,7 @@
-1. Login /Register ki validations ...? (done probably)
+1. Give Option of uploading image while detection
 
-3. Give Demo Images while Detection
-4. Give Option of uploading image while detection
-
-5. Send Request to backend whenever we detect
-6. Create LoginMenu Component..(after user login)
-
+2. Send Request to backend whenever we detect
+3. Create LoginMenu Component..(after user login)
 
 -------------------------------------------
 Lalit (4-9-2019)
-login ka page... ho gya...
-register ka page bhi... ho gya hai
-
-dono me onclick fuction set karna hai
-
-register ki details check karni hai ki koi  kam toh nahi hai...
-
-use backend se bhi join karna hai...ho gaya hai.

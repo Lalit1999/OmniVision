@@ -10,7 +10,7 @@ class Login extends Component
 		this.state = {
       		username : '' ,
       		pw : '' ,
-      		error :''
+      		error : ''
 		} ;
 	}
 
@@ -35,41 +35,47 @@ class Login extends Component
 	}
 	OnButtonClick = () => {
 		console.log("button clicked") ;
-		const obj = {
-			name : this.state.username ,
-			pw : this.state.pw
-		} ;
-		fetch('https://ov-api.herokuapp.com/login',{
-			method : 'post' ,
-			headers : { 'Content-Type' : 'application/json'} ,
-			body :JSON.stringify(obj) ,
-		})
-		.then(res => {
-			if(res.ok)
-				return res.json() ;
-			else
-				throw Error(res.statusText) ;
-		})
-		.then(data =>{	
-			//user ko login karake state update karani hai 
-			console.log(data) ;
-		}) 
-		.catch( err  => console.log(err) ) ;
+		if(this.state.error === '')
+		{
+			const obj = {
+				name : this.state.username ,
+				pw : this.state.pw
+			} ;
+			fetch('https://ov-api.herokuapp.com/login',{
+				method : 'post' ,
+				headers : { 'Content-Type' : 'application/json'} ,
+				body :JSON.stringify(obj) ,
+			})
+			.then(res => {
+				if(res.ok)
+					return res.json() ;
+				else
+					throw Error(res.statusText) ;
+			})
+			.then(data =>{	
+				//user ko login karake state update karani hai 
+				console.log(data) ;
+			}) 
+			.catch( err  => console.log(err) ) ;
+		}
 	}
 
   	render() {
+  		let err = (this.state.error.length > 1) ? 'error' : '' ;
 		return (
 			<div className = "bg">
 				<div className="login">
 	              <h3 className="login-title">Login </h3>
-	              <p>{this.state.error}</p>
+	              <p className={err}>{this.state.error}</p>
 	              <div>
 	                <label className="lbl">Username : </label>
-	                <input  className="inp" type="text" onChange={this.onIdChange} name="name" value={this.state.id}/>
+	                <input  className="inp" type="text" onChange={this.onInputChange}
+	                	 name="name" value={this.state.id}/>
 	              </div>
 	              <div>
 	                <label className="lbl">Password : </label>
-	                <input className="inp" type="password" onChange={this.onPwChange} name="name" value={this.state.pw}/>
+	                <input className="inp" type="password" onChange={this.onInputChange}
+	                	 name="pw" value={this.state.pw}/>
 	              </div>
 	              <div className="btn-con">
 	                <button onClick={this.OnButtonClick}> Sign-in </button> 

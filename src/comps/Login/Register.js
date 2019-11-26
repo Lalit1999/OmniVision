@@ -46,36 +46,42 @@ class Register extends Component
 	}
 	onButtonClick = () => {
 		console.log("button clicked") ;
-		const obj = {
-			name : this.state.username ,
-			pw : this.state.pw
-		} ;
-		fetch('https://ov-api.herokuapp.com/register',{
-			method : 'post' ,
-			headers : { 'Content-Type' : 'application/json'} ,
-			body :JSON.stringify(obj) ,
-		})
-		.then(res => {
-			if(res.ok)
-				return res.json() ;
-			else
-				throw Error(res.statusText) ;
-		})
-		.then(data => {	
-			//show if registered or not
-			 console.log(data) ;
-		}) 
-		.catch( err  => console.log(err) ) ;
-
+		if(this.state.error === '')
+		{
+			const obj = {
+				name : this.state.username ,
+				pw : this.state.pw
+			} ;
+			fetch('https://ov-api.herokuapp.com/register',{
+				method : 'post' ,
+				headers : { 'Content-Type' : 'application/json'} ,
+				body :JSON.stringify(obj) ,
+			})
+			.then(res => {
+				if(res.ok)
+					return res.json() ;
+				else
+					throw Error(res.statusText) ;
+			})
+			.then(data => {	
+				//show if registered or not
+				 console.log(data) ;
+			}) 
+			.catch( err  => console.log(err) ) ;
+		}
+		else
+		{
+			this.setState({error: 'Please Fix any errors before submitting form'})
+		}
 	}
 	render() 
 	{
-		
+  		let err = (this.state.error.length > 1) ? 'error' : '' ;
 		return (
 			<div className = "bgk">
 				<div className="register">
 	              <h3 className="register-title">Register </h3>
-				  <p className = 'error'>{this.state.error}</p>
+				  <p className={err}>{this.state.error}</p>
 
 	              <div>
 	                <label className="lbel">UserName : </label>

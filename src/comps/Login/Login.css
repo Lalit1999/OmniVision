@@ -94,6 +94,7 @@
   border-radius: .5rem;
   transition: all .3s ;
   text-decoration: none;
+  font-family: 'Arial' ;
 }
 
 .btn-con2:hover
@@ -101,4 +102,14 @@
   background-color: black ;
   color: #ccddff ;
   box-shadow: inset 0 0 0 1px #ccddff;
+}
+
+.error
+{
+  color: darkred ;
+  font-size: 1rem ;
+  border : 1px solid red ;
+  border-radius: 0.4rem ;
+  text-align: center ;
+  background-color: salmon ;
 }
