@@ -58,6 +58,10 @@ class Login extends Component
 			}) 
 			.catch( err  => console.log(err) ) ;
 		}
+		else
+		{
+			this.setState({error: 'Please Fix any errors before submitting form'})
+		}
 	}
 
   	render() {

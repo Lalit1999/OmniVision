@@ -64,8 +64,12 @@ class Register extends Component
 					throw Error(res.statusText) ;
 			})
 			.then(data => {	
-				//show if registered or not
-				 console.log(data) ;
+				this.setState({username: '', pw: '', rpw: ''});
+				
+				//Remove alert and add error jaisa paragraph with green color 
+				alert('You have been successfully registered') ;
+				
+				console.log(data) ;
 			}) 
 			.catch( err  => console.log(err) ) ;
 		}

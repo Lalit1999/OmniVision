@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Teko');
+
+.burger a
+{
+	border-bottom: 1px solid lightgray !important;
+	display: block;
+}
+
+.burger, .cheeseburger-menu-inner
+{
+	background-color: white ;
+	text-align: center;
+}
+
+.link
+{	font-size: 2rem ;
+	text-decoration: none ;
+	color : black !important;
+	font-family : 'Teko', sans-serif ;
+}
+
+.item:hover
+{
+	background-color: darkgray !important;
+	transform: scale(1.3);
+}
