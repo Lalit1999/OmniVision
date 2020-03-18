@@ -18,6 +18,26 @@ class DetectContent extends Component {
 		this.setState({ input: event.target.value});
 	}
 
+	returnUploadDiv = () => {
+		return <FileUp color={this.props.color}/> ;
+	}
+
+	returnCameraDiv = () => {
+		return <div> Coming Soon!.. </div> ;
+	}
+
+	checkUserLoggedIn = (fn) => {
+		if(this.props.user)
+			return fn() ;
+		else
+			return (
+				<div className="warning">
+				 You need to be logged in to view this content.
+				 Click the button at Top-Right to Login or Register. 
+				</div>
+			) ; 
+	}
+
 	render() {
 		const {color} = this.props ; 
 		return (
@@ -28,7 +48,7 @@ class DetectContent extends Component {
 				<h3 className="detcont-subtitle" 
 				 style={ {textShadow: '-3px -3px 0 '+color+', 3px -3px 0 '+color+', -3px 3px 0 '+color+', 3px 3px 0 '+color+''} }>
 				 {this.props.text} </h3>
-				<ContentChoice choices={['Sample', 'Input-URL', 'Upload']} color={this.props.color}
+				<ContentChoice choices={['Sample', 'Input-URL', 'Upload', 'Camera']} color={this.props.color}
 				 Sample={<SampleImage data={this.props.data} onImageClick={this.props.onSampleImageClick}/>}
 				 Input-URL={
 				 	<div className="input-con" >
@@ -37,7 +57,8 @@ class DetectContent extends Component {
 						<button style={ {backgroundColor: color} }
 							onClick={() => this.props.onSubmit(this.state.input)}> Detect </button>
 					</div>}
-				 Upload={<FileUp color={this.props.color}/>}
+				 Upload={this.checkUserLoggedIn(this.returnUploadDiv)}
+				 Camera={this.checkUserLoggedIn(this.returnCameraDiv)}
 				/>
 			</div>
 		);

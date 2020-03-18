@@ -62,7 +62,7 @@ class FaceDetection extends React.Component
 			<div className="face-detect main">
 				<DetectContent title="Face Detection" onSubmit={this.onButtonSubmit}
 				text="All-Seeing Eye will detect human faces in your pictures" color={this.props.color}
-				onSampleImageClick={this.onSampleImageClick} data={face_sample}/>
+				onSampleImageClick={this.onSampleImageClick} data={face_sample} user={this.props.usertoken}/>
 				<p className={'color-error '+none}> {this.state.error} </p>
 				<Image link={this.state.img} dummy={this.getDummySize}/>
 				<FaceResult r={this.resRef} faces={this.state.faces} url={this.state.img}

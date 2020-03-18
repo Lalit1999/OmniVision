@@ -54,7 +54,7 @@ class GeneralModel extends React.Component
 			<div className="color main">
 				<DetectContent title="Object Detection" onSubmit={this.onButtonSubmit} 
 				text="All-Seeing Eye will detect objects in your pictures" color={this.props.color}
-				onSampleImageClick={this.onSampleImageClick} data={gen_sample}/>
+				onSampleImageClick={this.onSampleImageClick} data={gen_sample} user={this.props.usertoken}/>
 				<p className={'color-error '+none}> {this.state.error} </p>
 				<Image link={this.state.img} />
 				<GeneralResult r={this.resRef} concepts={this.state.data} />

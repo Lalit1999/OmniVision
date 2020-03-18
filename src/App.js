@@ -61,10 +61,10 @@ class App extends React.Component
             <Header2 color={color} usertoken={this.checkUser()} setUser={this.setUser} />
             <Switch>
               <Route path='/' exact render={props=><Home {...props} color={color} />} />
-              <Route path='/color' exact render={props=><ColorDetection {...props} color={color} />}/>
-              <Route path='/face' exact render={props=><FaceDetection {...props} color={color} />} />
-              <Route path='/general' exact render={props=><GeneralModel {...props} color={color} />} />
-              <Route path='/age' exact render={props=><AgeGenderModel {...props} color={color} />} />
+              <Route path='/color' exact render={props=><ColorDetection {...props} usertoken={this.checkUser()} color={color} />}/>
+              <Route path='/face' exact render={props=><FaceDetection {...props} usertoken={this.checkUser()} color={color} />} />
+              <Route path='/general' exact render={props=><GeneralModel {...props} usertoken={this.checkUser()} color={color} />} />
+              <Route path='/age' exact render={props=><AgeGenderModel {...props} usertoken={this.checkUser()} color={color} />} />
               <Route path='/login' exact render={props=><Login {...props} setUser={this.setUser} />} />
               <Route path='/register' exact render={props=><Register {...props} setUser={this.setUser} />} />
               <Route exact component={NotFound} />

@@ -61,7 +61,7 @@ class AgeGenderModel extends Component {
 			<div className="ageg-detect main">
 				<DetectContent title="Age & Gender Detection" onSubmit={this.onButtonSubmit}
 				text="All-Seeing Eye will predict Age & Gender of human faces" color={this.props.color}
-				onSampleImageClick={this.onSampleImageClick} data={age_sample}/>
+				onSampleImageClick={this.onSampleImageClick} data={age_sample} user={this.props.usertoken}/>
 				<p className={'color-error '+none}> {this.state.error} </p>
 				<Image link={this.state.img} dummy={this.getDummySize}/>
 				<AgeGenderResult r={this.resRef} faces={this.state.faces} url={this.state.img}

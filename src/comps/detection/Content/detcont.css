@@ -75,3 +75,9 @@
 {
   	transition: text-shadow 2s ;
 }
+
+.warning
+{
+	font-size: 2rem;
+	margin: 1em ;
+}
