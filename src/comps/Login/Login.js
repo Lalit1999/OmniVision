@@ -8,20 +8,26 @@ class Login extends Component
 	{
 		super(props) ;
 		this.state = {
-      		username : '' ,
+      		email : '' ,
       		pw : '' ,
       		error : ''
 		} ;
 	}
 
 	onInputChange = (event) => {
-		if(event.target.name === 'username')
+		if(event.target.name === 'email')
 		{
+			//eslint-disable-next-line
+			var emre = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/gi;
 			if(event.target.value === '')
-				this.setState({error: 'Username Name can not be blank'}) ;
-			else 
-				this.setState({error: ''}) ;
-			this.setState({username : event.target.value}) ;
+				this.setState({error: 'E-Mail can not be blank'}) ;
+			else if(emre.test(event.target.value) === false)
+				this.setState({error: 'This might not be a valid E-Mail address'});
+			else
+			{	if(this.state.error === 'E-Mail can not be blank' || this.state.error === 'This might not be a valid E-Mail address') 
+					this.setState({error: ''}) ;
+			}
+			this.setState({ email : event.target.value }) ;
 		}
 		else if (event.target.name === 'pw')
 		{
@@ -34,12 +40,11 @@ class Login extends Component
 		
 	}
 	OnButtonClick = () => {
-		console.log("button clicked") ;
 		if(this.state.error === '')
 		{
 			const obj = {
-				name : this.state.username ,
-				pw : this.state.pw
+				email : this.state.email ,
+				password : this.state.pw
 			} ;
 			fetch('https://ov-api.herokuapp.com/login',{
 				method : 'post' ,
@@ -53,8 +58,11 @@ class Login extends Component
 					throw Error(res.statusText) ;
 			})
 			.then(data =>{	
-				//user ko login karake state update karani hai 
-				console.log(data) ;
+				this.setState({pw: '', email: ''});
+				
+				this.props.setUser(data) ;
+
+				this.props.history.push('/');
 			}) 
 			.catch( err  => console.log(err) ) ;
 		}
@@ -72,9 +80,9 @@ class Login extends Component
 	              <h3 className="login-title">Login </h3>
 	              <p className={err}>{this.state.error}</p>
 	              <div>
-	                <label className="lbl">Username : </label>
+	                <label className="lbl">E-Mail : </label>
 	                <input  className="inp" type="text" onChange={this.onInputChange}
-	                	 name="name" value={this.state.id}/>
+	                	 name="email" value={this.state.id}/>
 	              </div>
 	              <div>
 	                <label className="lbl">Password : </label>
@@ -82,8 +90,8 @@ class Login extends Component
 	                	 name="pw" value={this.state.pw}/>
 	              </div>
 	              <div className="btn-con">
-	                <button onClick={this.OnButtonClick}> Sign-in </button> 
-	                <Link className="btn-con2" to = '/register'>Sign-up</Link> 
+	                <button onClick={this.OnButtonClick}> Login </button> 
+	                <Link className="btn-con2" to = '/register'> Register </Link> 
 	              </div>
 	            </div>
 			</div>          

@@ -19,6 +19,7 @@ class App extends React.Component
     super() ;
     this.state = {
       color: '#4682b4' ,
+      user : {} ,
     } ;
   }
 
@@ -36,24 +37,36 @@ class App extends React.Component
     window.removeEventListener('resize', this.resize)
   }
 
-  // Create Age Model
-  
+  //For Logging In User
+  setUser = (data) => {
+    this.setState({user: data});
+  }
+
+  //Check if user is logged in
+  checkUser = () => {
+    if( this.state.user.user )
+      return this.state.user.token ;
+    else 
+      return false ; 
+  }  
+
   render() 
   { const {color} = this.state ;
+      // console.log(this.state) ;
     return(
       <div className="App">
         <BackGround setColor={this.setColor}/>
         <BrowserRouter>
           <div>
-            <Header2 color={color}/>
+            <Header2 color={color} usertoken={this.checkUser()} setUser={this.setUser} />
             <Switch>
               <Route path='/' exact render={props=><Home {...props} color={color} />} />
               <Route path='/color' exact render={props=><ColorDetection {...props} color={color} />}/>
               <Route path='/face' exact render={props=><FaceDetection {...props} color={color} />} />
               <Route path='/general' exact render={props=><GeneralModel {...props} color={color} />} />
               <Route path='/age' exact render={props=><AgeGenderModel {...props} color={color} />} />
-              <Route path='/login' exact component={Login} />
-              <Route path='/register' exact component={Register} />
+              <Route path='/login' exact render={props=><Login {...props} setUser={this.setUser} />} />
+              <Route path='/register' exact render={props=><Register {...props} setUser={this.setUser} />} />
               <Route exact component={NotFound} />
             </Switch>
           </div>

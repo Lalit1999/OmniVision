@@ -13,11 +13,6 @@
 	border-bottom : 1px solid white;
 }
 
-/*.ovname
-{
-  text-shadow: -3px -3px 0 steelblue, 3px -3px 0 steelblue, -3px 3px 0 steelblue, 3px 3px 0 steelblue;
-}
-*/
 .header2-login, .header2-menu
 {
 	font-size: 2rem ;
@@ -72,6 +67,16 @@
 {
   text-decoration : none;
   color: inherit;
+}
+
+.header2-login button
+{
+	border: none;
+	color: inherit;
+	font-size: inherit;
+	font-style: inherit;
+	background: none;
+	font-weight: lighter ;
 }
 
 .eye

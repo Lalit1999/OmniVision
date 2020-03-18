@@ -10,6 +10,7 @@ class Register extends Component
 		this.state = {
       		username : '' ,
      		pw : '' ,
+     		email: '' ,
       		rpw : '' ,
       		error: ''
 		} ;
@@ -44,15 +45,30 @@ class Register extends Component
 		}
 		
 	}
+
+	onEmailChange = (event) => {
+		//eslint-disable-next-line
+		var emre = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/gi;
+		if(event.target.value === '')
+			this.setState({error: 'E-Mail can not be blank'}) ;
+		else if(emre.test(event.target.value) === false)
+			this.setState({error: 'This might not be a valid E-Mail address'});
+		else
+		{	if(this.state.error === 'E-Mail can not be blank' || this.state.error === 'This might not be a valid E-Mail address') 
+				this.setState({error: ''}) ;
+		}
+		this.setState({ email : event.target.value }) ;
+	}
+
 	onButtonClick = () => {
-		console.log("button clicked") ;
 		if(this.state.error === '')
 		{
 			const obj = {
 				name : this.state.username ,
-				pw : this.state.pw
+				password : this.state.pw ,
+				email : this.state.email 
 			} ;
-			fetch('https://ov-api.herokuapp.com/register',{
+			fetch('https://ov-api.herokuapp.com/users',{
 				method : 'post' ,
 				headers : { 'Content-Type' : 'application/json'} ,
 				body :JSON.stringify(obj) ,
@@ -64,12 +80,11 @@ class Register extends Component
 					throw Error(res.statusText) ;
 			})
 			.then(data => {	
-				this.setState({username: '', pw: '', rpw: ''});
+				this.setState({username: '', pw: '', rpw: '', email: ''});
 				
-				//Remove alert and add error jaisa paragraph with green color 
-				alert('You have been successfully registered') ;
-				
-				console.log(data) ;
+				this.props.setUser(data) ;
+
+				this.props.history.push('/');
 			}) 
 			.catch( err  => console.log(err) ) ;
 		}
@@ -88,9 +103,14 @@ class Register extends Component
 				  <p className={err}>{this.state.error}</p>
 
 	              <div>
-	                <label className="lbel">UserName : </label>
+	                <label className="lbel">Username : </label>
 	                <input  className="inpu" type="text" name="username" onChange={this.onInputChange} 
 	                		value={this.state.username} />
+	              </div>
+	              <div>
+	                <label className="lbel">E-Mail : </label>
+	                <input  className="inpu" type="text" name="email" onChange={this.onEmailChange} 
+	                		value={this.state.email} />
 	              </div>
 	              <div>
 	                <label className="lbel">Password : </label>
@@ -98,14 +118,14 @@ class Register extends Component
 	                		 value={this.state.pw} />
 	              </div>
 	              <div>
-	                <label className="lbel">Re-enter Password : </label>
+	                <label className="lbel">Re-enter&ensp; Password : </label>
 	                <input className="inpu" type="password"  name="rpw" onChange={this.onInputChange}
 	                		 value={this.state.rpw} />
 	              </div>
 	              
 	              <div className="btn-cona">
-	                <button onClick={this.onButtonClick} > Sign-up </button> 
-	                <Link className="btn-con2" to = '/login'>Sign-in</Link> 
+	                <button onClick={this.onButtonClick} > Submit </button> 
+	                <Link className="btn-con2" to = '/login'> Login </Link> 
 
 	              </div>
 	            </div>
