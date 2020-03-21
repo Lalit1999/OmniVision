@@ -24,3 +24,13 @@
 	background-color: darkgray !important;
 	transform: scale(1.3);
 }
+
+.pi
+{
+	height: 50%;
+	width: 100% ;
+	border: 1px solid white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
