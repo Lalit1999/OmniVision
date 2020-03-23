@@ -4,13 +4,10 @@ import {Link} from 'react-router-dom';
 import './hometile.css' ;
 
 class HomeTile extends Component 
-{	constructor()
-	{
-		super() ;
-		this.state = {
-			hover : 'no'
-		} ;
-	}
+{	
+	state = {
+		hover : 'no'
+	} ;
 
 	checkHoverState = () => {
 		if(this.state.hover === 'no')

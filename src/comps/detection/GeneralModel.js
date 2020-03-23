@@ -10,16 +10,13 @@ import './colordetect.css' ;
 const app = new Clarifai.App( { apiKey: '8ffd32e4a8994da296c0be708e6f4cec' } );
 
 class GeneralModel extends React.Component
-{	constructor()
-	{
-		super() ;
-		this.resRef = React.createRef() ;
-		this.state = {
-			error: '' ,
-			img : '' ,
-			data : [] 
-		} ;
-	}
+{	
+	resRef = React.createRef() ;
+	state = {
+		error: '' ,
+		img : '' ,
+		data : [] 
+	} ;
 
 	scrollToBottom = () => {
 	    this.resRef.current.scrollIntoView({ behavior: 'smooth' })

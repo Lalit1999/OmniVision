@@ -3,13 +3,9 @@ import React, { Component } from 'react';
 import './contentchoice.css' ;
 
 class ContentChoice extends Component {
-	constructor()
-	{
-		super() ;
-		this.state = {
-			current : '' ,
-		} ;
-	}
+	state = {
+		current : '' ,
+	} ;
 
 	componentDidMount = () => {
 		this.setState({current: this.props.choices[0]});

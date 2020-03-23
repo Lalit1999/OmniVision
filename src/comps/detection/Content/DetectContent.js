@@ -2,17 +2,13 @@ import React, { Component } from 'react';
 
 import ContentChoice from '../../choice/ContentChoice.js' ;
 import SampleImage from '../sample/SampleImage.js' ;
-import FileUp from './FileUp.js' ;
+import FileUp from '../Fileup/FileUp.js' ;
 import './detcont.css' ;
 
 class DetectContent extends Component {
-	constructor()
-	{
-		super() ;
-		this.state = {
-			input : ''
-		} ;
-	}
+	state = {
+		input : ''
+	} ;
 	
 	onInputChange = (event) => {
 		this.setState({ input: event.target.value});

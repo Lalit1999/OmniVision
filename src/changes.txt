@@ -1,0 +1,20 @@
+23-03-2020
+
+(Manan) Please ek baar check kar liyo ye saari cheeze
+
+1. Pehle hum constructor ke andar state lete the..ab new version of react aa gaya and bina 
+	constructor ke kaam ho raha hai..saari files me change same cheez kari hai but way dekh liyo
+	-app.js		-detectcontent.js	-contentchoice.js	-background.js	-header2.js
+
+2. Baaki class variables bhi ctor ke bina work kar rahe hai
+	-chaaro models 
+
+3. 1. File state me ja rahi hai and name show ho raha hai
+   2. Upload ke liye button lagaya hai 
+   3. File validation ki agar image hai to hi aage badhega
+	-fileup.js
+
+4. Home page me name add kar diya and ek line remove kar di last ki
+	-home.js
+
+-------COMITTED & PUSHED------------------

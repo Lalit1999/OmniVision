@@ -15,12 +15,12 @@ class Home extends React.Component
 					<HomeTile name="Colors" img="colors" link="/color" color={this.props.color}/>
 				</div>
 				<div className="middle-box"> 
+					<p className="home-msg"> Hello {this.props.user} </p>
 			 		<img className="home-eye" alt="eye" src={Eye} />
 					<h2 className="home-title">
 						<span className="sp text-focus-in">OmniVision</span>
 					</h2>
 					<p className="home-msg">The All-Seeing Eye can detect various things in images</p>
-					<p className="home-msg">What will you detect?</p>
 				</div>
 				<div className="right-box">
 					<HomeTile name="Objects" img="objects" link="/general" color={this.props.color}/>
@@ -34,4 +34,4 @@ class Home extends React.Component
 export default Home ;
 
 				
-				
+					// <p className="home-msg">What will you detect?</p>

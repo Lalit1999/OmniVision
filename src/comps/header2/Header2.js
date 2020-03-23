@@ -9,12 +9,9 @@ import LoginMenu from '../LoginMenu/LoginMenu.js' ;
 import './header2.css' ;
 
 class Header2 extends Component {
-	constructor(props) {
-	    super(props)
-	    this.state = {
-	      menuOpen: false,
-	    }
-	}
+	state = {
+      menuOpen: false,
+    } ;
 
 	openMenu = () => {
 	    this.setState({ menuOpen: true })

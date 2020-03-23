@@ -4,15 +4,11 @@ import './Login.css' ;
 
 class Login extends Component
 {
-	constructor(props)
-	{
-		super(props) ;
-		this.state = {
-      		email : '' ,
-      		pw : '' ,
-      		error : ''
-		} ;
-	}
+	state = {
+  		email : '' ,
+  		pw : '' ,
+  		error : ''
+	} ;
 
 	onInputChange = (event) => {
 		if(event.target.name === 'email')

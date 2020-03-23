@@ -13,13 +13,10 @@ const colors = ['rgb(22, 160, 133)' , 'rgb(70, 130, 180)' , 'rgb(39, 174, 96)', 
 //243, 156, 18  is yellowish..im doubtful about it
 
 class BackGround extends Component {
-	constructor() 
-	{
-		super() ;
-		this.state = {
-			color: colors[1] ,
-		} ;
-	}
+	state = {
+		color: colors[1] ,
+	} ;
+
 	componentDidMount = () => {
 	  this.interval = setInterval(() => {
 	  	let x = Math.floor((Math.random() * 18));

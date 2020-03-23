@@ -14,14 +14,11 @@ import Register from './comps/Login/Register.js' ;
 import './App.css';
 
 class App extends React.Component
-{ constructor()
-  {
-    super() ;
-    this.state = {
-      color: '#4682b4' ,
-      user : {} ,
-    } ;
-  }
+{  
+  state = {
+    color: '#4682b4' ,
+    user : {} ,
+  } ;
 
   setColor = (color) => {
     this.setState({color: color});
@@ -43,9 +40,12 @@ class App extends React.Component
   }
 
   //Check if user is logged in
-  checkUser = () => {
+  checkUser = (str = 'token') => {
     if( this.state.user.user )
-      return this.state.user.token ;
+      if(str === 'token')
+        return this.state.user.token ;
+      else
+        return this.state.user.user.name ;
     else 
       return false ; 
   }  
@@ -60,7 +60,7 @@ class App extends React.Component
           <div>
             <Header2 color={color} usertoken={this.checkUser()} setUser={this.setUser} />
             <Switch>
-              <Route path='/' exact render={props=><Home {...props} color={color} />} />
+              <Route path='/' exact render={props=><Home {...props} color={color} user={this.checkUser('name')}/>} />
               <Route path='/color' exact render={props=><ColorDetection {...props} usertoken={this.checkUser()} color={color} />}/>
               <Route path='/face' exact render={props=><FaceDetection {...props} usertoken={this.checkUser()} color={color} />} />
               <Route path='/general' exact render={props=><GeneralModel {...props} usertoken={this.checkUser()} color={color} />} />

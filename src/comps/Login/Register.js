@@ -4,17 +4,13 @@ import './Register.css' ;
 
 class Register extends Component 
 {	
-	constructor(props)
-	{
-		super(props) ;
-		this.state = {
-      		username : '' ,
-     		pw : '' ,
-     		email: '' ,
-      		rpw : '' ,
-      		error: ''
-		} ;
-	}
+	state = {
+  		username : '' ,
+ 		pw : '' ,
+ 		email: '' ,
+  		rpw : '' ,
+  		error: ''
+	} ;
 
 	onInputChange = (event) => {
 		if(event.target.name === 'username')

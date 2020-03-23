@@ -9,18 +9,15 @@ import AgeGenderResult from './Result/AgeGenderResult.js' ;
 const app = new Clarifai.App( { apiKey: '8ffd32e4a8994da296c0be708e6f4cec' } );
 
 class AgeGenderModel extends Component {
-	constructor()
-	{
-		super() ;
-		this.resRef = React.createRef() ;
-		this.state = {
-			error: '' ,
-			img : '' ,
-			faces : [] ,
-			dumHeight : 0 ,
-			dumWidth : 0
-		} ;
-	}
+	
+	resRef = React.createRef() ;
+	state = {
+		error: '' ,
+		img : '' ,
+		faces : [] ,
+		dumHeight : 0 ,
+		dumWidth : 0
+	} ;
 
 	scrollToBottom = () => {
 	    this.resRef.current.scrollIntoView({ behavior: 'smooth' })
