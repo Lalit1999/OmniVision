@@ -22,6 +22,7 @@ class LoginMenu extends React.Component
 			<div className="loginmenu">
 				<img src = {profile} alt="profile image" className="pi" />
 				<div className="burger" >
+					<Link className={this.classMenu.face} to='/'> Home </Link>
 					<Link className={this.classMenu.face} to='/face'> Face Detection </Link>
 					<Link className={this.classMenu.general} to='/general'> Object Detection </Link>
 					<Link className={this.classMenu.color} to='/color'> Color Detection </Link>
