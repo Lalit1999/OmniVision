@@ -22,6 +22,18 @@ class Header2 extends Component {
 	    this.setState({ menuOpen: false })
 	}
 
+	checkUser = (str = 'token') => {
+		console.log(this.state.user) ;
+    if( this.state.user )
+      if(str === 'token')
+        return this.state.user.token ;
+      else
+        return this.state.user.user.name ;
+    else 
+      return false ; 
+  }  
+
+
 	onLogoutClick = () => {
 		fetch('https://ov-api.herokuapp.com/logoutAll',{
 				method : 'post' ,
@@ -59,7 +71,7 @@ class Header2 extends Component {
 					 
 					 <div className="header2-menu">
 					 	<CheeseburgerMenu isOpen={this.state.menuOpen} closeCallback={this.closeMenu}>
-								<LoginMenu closeCallback={this.closeMenu}/>
+								<LoginMenu closeCallback={this.closeMenu} usertoken = {this.checkUser()} />
 						</CheeseburgerMenu>
 						<HamburgerMenu isOpen={this.state.menuOpen} menuClicked={this.openMenu} 
 									   width={32} height={24} strokeWidth={8} color='white' 
