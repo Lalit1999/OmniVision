@@ -49,6 +49,8 @@ class AgeGenderModel extends Component {
 			this.setState({error: 'Image URL Invalid or Image Not Accesible', img:'', faces: []});
 			console.log(err) ;
 		} ) ;
+
+		// this.setState({error: '', img:'https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif'})
 	}
 
 	render()
@@ -62,7 +64,7 @@ class AgeGenderModel extends Component {
 				<p className={'color-error '+none}> {this.state.error} </p>
 				<Image link={this.state.img} dummy={this.getDummySize}/>
 				<AgeGenderResult r={this.resRef} faces={this.state.faces} url={this.state.img}
-					h={this.state.dumHeight} w={this.state.dumWidth}/>	
+					h={this.state.dumHeight} w={this.state.dumWidth}/>
 			</div>
 		) ;
 	}

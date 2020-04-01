@@ -15,11 +15,24 @@ class DetectContent extends Component {
 	}
 
 	returnUploadDiv = () => {
-		return <FileUp color={this.props.color}/> ;
+		let str = '' ;
+		if( this.props.title.includes('Age') )
+			str = 'age' ;
+		else if( this.props.title.includes('Color') )
+			str = 'color' ;
+		if( this.props.title.includes('Face') )
+			str = 'face' ;
+		if( this.props.title.includes('Object') )
+			str = 'general' ;
+		return <FileUp token={this.props.user} color={this.props.color} type={str} submit={this.submitUploadedImage}/> ;
 	}
 
 	returnCameraDiv = () => {
 		return <div> Coming Soon!.. </div> ;
+	}
+
+	submitUploadedImage = (url) => {
+		this.props.onSubmit(url) ;
 	}
 
 	checkUserLoggedIn = (fn) => {

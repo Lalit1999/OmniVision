@@ -18,3 +18,15 @@
 	-home.js
 
 -------COMITTED & PUSHED------------------
+
+01-04-2020
+
+(Manan) Ek baar check kar liyo
+
+1. Login karo to token generate ho rha hai..Check in MongoDB( Mongo-Atlas )
+
+2. Image Upload karne pe AWS me store ho rahi hai
+
+3. Results de raha hai in Image-Upload...Check for all 4
+
+-------COMITTED & PUSHED------------------

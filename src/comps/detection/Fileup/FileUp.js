@@ -22,7 +22,26 @@ class FileUp extends Component {
 	}
 
 	onUploadClick = () => {
-		console.log(this.state.file) ;
+		// console.log(this.state.file) ;
+		const data = new FormData() ;
+		let url = 'https://ov-api.herokuapp.com/upload/' + this.props.type ;
+		data.append('upload', this.state.file) ;
+
+		fetch(url,{
+				method : 'post' ,
+				headers : { 'Authorization' : 'Bearer ' + this.props.token } ,
+				body : data ,
+			})
+			.then(res => {
+				if(res.ok)
+					return res.json() ;
+				else
+					throw Error(res.statusText) ;
+			})
+			.then(data =>{	
+				this.props.submit(data) ;
+			}) 
+			.catch( err  => console.log(err) ) ;
 	}
 
 	render() {

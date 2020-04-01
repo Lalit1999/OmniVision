@@ -23,7 +23,7 @@ class Header2 extends Component {
 	}
 
 	checkUser = (str = 'token') => {
-		console.log(this.state.user) ;
+		// console.log(this.state.user) ;
     if( this.state.user )
       if(str === 'token')
         return this.state.user.token ;

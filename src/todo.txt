@@ -1,8 +1,9 @@
 OVERALL
 
-1. Send Request to backend whenever we detect
+1. Send Request to backend whenever we detect 
 2. Make a hover notification component to give messages like registration failed, successful, etc
 3. Face detection ki ek image work nahi kar rahi
+4. Loading Show karni hai detection ke wakt
 
 -------------------------------------------
 Lalit (4-9-2019)
@@ -20,3 +21,13 @@ Lalit (4-9-2019)
 1)  Register, Login ka error bina component banaye dikha sakte hai
 2)  use Google Drive API
 3)  loginmenu me image warning de rahi hai
+
+----------------------------------------------
+
+01-04-2020
+
+FOR LALIT
+
+1) CSS me font-size decrease kar do menu ka ..scrollbar aa raha hai
+2) thoda sa ya to margin de do top-bottom ya hover effect change kar do
+3) user history me aisa kar sakte ho..agar logged in hai to /history varna /login
