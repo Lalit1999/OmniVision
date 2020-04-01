@@ -12,7 +12,7 @@ import AgeGenderModel from './comps/detection/AgeGenderModel.js' ;
 import Login from './comps/Login/Login.js' ;
 import Register from './comps/Login/Register.js' ;
 import History from './comps/History/History.js' ;
-import Profile from './comps/Profile/Profile.js' ;
+import UserProfile from './comps/UserProfile/UserProfile.js' ;
 import './App.css';
 
 class App extends React.Component
@@ -68,7 +68,7 @@ class App extends React.Component
               <Route path='/general' exact render={props=><GeneralModel {...props} usertoken={this.checkUser()} color={color} />} />
               <Route path='/age' exact render={props=><AgeGenderModel {...props} usertoken={this.checkUser()} color={color} />} />
               <Route path='/history' exact render={props=><History {...props} usertoken={this.checkUser()} color={color} />} />
-              <Route path='/profile' exact render={props=><Profile {...props} usertoken={this.checkUser()} color={color} />} />
+              <Route path='/Userprofile' exact render={props=><UserProfile {...props} usertoken={this.checkUser()} color={color} />} />
               <Route path='/login' exact render={props=><Login {...props} setUser={this.setUser} />} />
               <Route path='/register' exact render={props=><Register {...props} setUser={this.setUser} />} />
               <Route exact component={NotFound} />
@@ -80,4 +80,4 @@ class App extends React.Component
   }
 }
        
-export default App;
+export default App ;

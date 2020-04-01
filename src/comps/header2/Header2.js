@@ -71,7 +71,7 @@ class Header2 extends Component {
 					 
 					 <div className="header2-menu">
 					 	<CheeseburgerMenu isOpen={this.state.menuOpen} closeCallback={this.closeMenu}>
-								<LoginMenu closeCallback={this.closeMenu} usertoken = {this.checkUser()} />
+								<LoginMenu closeCallback={this.closeMenu} usertoken = {this.props.usertoken} />
 						</CheeseburgerMenu>
 						<HamburgerMenu isOpen={this.state.menuOpen} menuClicked={this.openMenu} 
 									   width={32} height={24} strokeWidth={8} color='white' 
