@@ -32,6 +32,7 @@ class DetectContent extends Component {
 	}
 
 	submitUploadedImage = (url) => {
+		console.log('Image Upload ho gayi') ;
 		this.props.onSubmit(url) ;
 	}
 

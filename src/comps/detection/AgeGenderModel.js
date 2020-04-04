@@ -45,6 +45,28 @@ class AgeGenderModel extends Component {
 			else
 				this.setState({error: 'Image has no detectable faces', img:'', faces: []});
 		})
+		.then( data => {
+			console.log('detection ke liye bhej raha hu')
+			
+			const obj = { link: this.state.img, data: this.state.faces } ;
+
+			fetch('https://ov-api.herokuapp.com/detect/age', {
+				method : 'post' ,
+				headers : { 'Content-Type' : 'application/json',
+							'Authorization' : 'Bearer ' + this.props.usertoken } ,
+				body : JSON.stringify(obj) ,
+			})
+			.then(res => {
+				if(res.ok)
+					return res.json() ;
+				else
+					throw Error(res.statusText) ;
+			})
+			.then(data =>{	
+				console.log(data) ;
+			}) 
+			.catch( err  => console.log(err) ) ;
+		})
 		.catch( err => {
 			this.setState({error: 'Image URL Invalid or Image Not Accesible', img:'', faces: []});
 			console.log(err) ;

@@ -38,6 +38,28 @@ class ColorDetection extends React.Component
 			// console.log(data.outputs[0].data.colors) ;
 			this.setState({error: '', img: txt, data: data.outputs[0].data.colors});
 		})
+		.then( data => {
+			console.log('detection ke liye bhej raha hu')
+			
+			const obj = { link: this.state.img, data: this.state.data } ;
+
+			fetch('https://ov-api.herokuapp.com/detect/color', {
+				method : 'post' ,
+				headers : { 'Content-Type' : 'application/json',
+							'Authorization' : 'Bearer ' + this.props.usertoken } ,
+				body : JSON.stringify(obj) ,
+			})
+			.then(res => {
+				if(res.ok)
+					return res.json() ;
+				else
+					throw Error(res.statusText) ;
+			})
+			.then(data =>{	
+				console.log(data) ;
+			}) 
+			.catch( err  => console.log(err) ) ;
+		})
 		.catch( err => {
 			this.setState({error: 'Image URL Invalid or Image Not Accesible', img:'', data:[]});
 			console.log(err) ;
