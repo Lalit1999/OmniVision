@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom' ;
+import ReactNotification, { store } from 'react-notifications-component' ;
+import 'react-notifications-component/dist/theme.css' ;
 
 import Header2 from './comps/header2/Header2.js' ;
 import Home from './comps/home/Home.js' ;
@@ -14,6 +16,17 @@ import Register from './comps/Login/Register.js' ;
 import History from './comps/History/History.js' ;
 import UserProfile from './comps/UserProfile/UserProfile.js' ;
 import './App.css';
+
+const notifObj = {
+  title: "Success!",
+  message: "Successfully logged in",
+  type: "success",
+  container: "top-right",
+  dismiss: {
+    duration: 4000,
+    onScreen: true
+  }
+} ;
 
 class App extends React.Component
 {  
@@ -39,6 +52,7 @@ class App extends React.Component
   //For Logging In User
   setUser = (data) => {
     this.setState({user: data});
+    store.addNotification(notifObj);
   }
 
   //Check if user is logged in
@@ -58,6 +72,7 @@ class App extends React.Component
     return(
       <div className="App">
         <BackGround setColor={this.setColor}/>
+        <ReactNotification />
         <BrowserRouter>
           <div>
             <Header2 color={color} usertoken={this.checkUser()} setUser={this.setUser} />
