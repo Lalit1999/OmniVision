@@ -1,9 +1,7 @@
 OVERALL
 
-1. Send Request to backend whenever we detect 
-2. Make a hover notification component to give messages like registration failed, successful, etc
-3. Face detection ki ek image work nahi kar rahi
-4. Loading Show karni hai detection ke wakt
+1. Make a hover notification component to give messages like registration failed, successful, etc
+2. Loading Show karni hai detection ke wakt
 
 -------------------------------------------
 Lalit (4-9-2019)
