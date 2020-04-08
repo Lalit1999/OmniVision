@@ -18,10 +18,14 @@ class UserProfile extends React.Component
 		return (
 			<div className="propfileBox">
 				<div className="ptest">
-					<p>Profile photo</p>
-					<p>Name</p>
-					<p>E-mail</p>
-					<p>Phone number</p>
+					<div className="left">
+						<p>Profile photo</p>
+					</div>
+					<div className="right">
+						<p>Name</p>
+						<p>E-mail</p>
+						<p>Phone number</p>
+					</div>
 				</div>
 			</div>
 			) ;

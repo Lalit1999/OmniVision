@@ -26,6 +26,23 @@
 	font-size: 2rem ;
 	text-decoration: none ;
 	font-family: 'Roboto', sans-serif;
-  display: inline;
+  display : flex ;
 }
+
+.left
+{
+  /*display: flex ;*/
+  flex-direction: column ;
+}
+
+/*.right
+{
+  refer psymemt for this.
+}
+*/
+.propfilebox div 
+{
+     border : 1px solid black ;
+}
+
 
