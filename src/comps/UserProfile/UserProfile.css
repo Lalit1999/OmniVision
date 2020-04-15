@@ -1,13 +1,13 @@
 .propfileBox
 {
   border: 1px solid black;
-  margin: 10em auto 2em ;
+  margin: 10em 2em 2em ;
   padding: 1.5em ;
   background-color: rgba(255, 255, 255, .1);
   /*display: inline-block;*/
   box-shadow: 4px 4px 8px 0 rgba( 0, 0, 0, .2 );
   border-radius: .5rem;
-  position: fixed;
+  /*position: fixed;*/
   z-index: -1 ;
   top: 0;
   bottom: 0 ;
@@ -21,7 +21,7 @@
 	/*height: 50%;*/
 	/*width: 90% ;*/
 	/*display: flex;*/
-	justify-content: center;
+	justify-content: space-evenly ;
 	/*align-items: center;*/
 	font-size: 2rem ;
 	text-decoration: none ;
@@ -31,18 +31,65 @@
 
 .left
 {
-  /*display: flex ;*/
+  display: flex ;
   flex-direction: column ;
+  margin-left: 2em ;
+  /*position: relative ;
+  top : 0 ;
+  left : 0 ;*/
 }
 
-/*.right
+.left_corner_one
 {
-  refer psymemt for this.
+  justify-content: left ;
+  background-image : url('../LoginMenu/profile.png') ; 
+  background-size: cover ;
+  height: 5em;
+  border-radius: 50% ;
+  position: relative ;  
 }
-*/
+
+
+.ui
+{
+  height: 30%;
+  width: 30% ;
+  justify-content: center;
+  position: absolute ;
+  bottom: 0 ;
+  right: 0 ;
+  /*opacity: 0 ;*/
+  border: 1px solid white;
+  /*display: flex;*/
+  
+  /*justify-content: center;*/
+  /*align-items: center;*/
+}
+
+
+.right
+{
+  /*refer psymemt for this.*/
+  display: flex;
+  width: 70% ;
+  margin-left: 5em;
+  flex-direction: column ;
+  justify-content: space-between; 
+}
+
 .propfilebox div 
 {
      border : 1px solid black ;
 }
 
+.right_corner_two
+{
+  display: flex;
+  flex-direction: row ;
+  justify-content: flex-end;
+}
 
+.right, .right_corner_one, .right_corner_two
+{
+  border : 1px solid black;
+}
