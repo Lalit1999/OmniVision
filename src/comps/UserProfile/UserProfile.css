@@ -91,5 +91,39 @@
 
 .right, .right_corner_one, .right_corner_two
 {
-  border : 1px solid black;
+  /*border : 1px solid black;*/
+}
+
+
+.button
+{
+  margin: 0.5em 0.2em ;
+  padding: 0.5em 2em ;
+  background-color: transparent;
+  font-size: 1.5rem ;
+  font-weight: bold ;
+  transition: all 0.4s ;
+  letter-spacing: 0.05em ;
+  color: blue ;
+}
+
+.button:hover
+{
+  color: white !important;
+  /*background-color: transparent;*/
+  transition: 1.4s ;
+  border: 2px solid white !important;
+}
+
+.button-a
+{
+  color: white !important;
+  border : 2px solid rgb(130, 195, 250);
+  /*border-top : 2px solid white !important;*/
+  transition: background-color 2s ;
+}
+
+.button-a:hover
+{
+  /*background-color: transparent;*/
 }
