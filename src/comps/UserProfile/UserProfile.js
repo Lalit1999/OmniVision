@@ -56,4 +56,4 @@ class UserProfile extends React.Component
 	}
 }
 
-export default userprofile ;
+export default UserProfile ;
