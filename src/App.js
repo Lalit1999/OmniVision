@@ -62,6 +62,8 @@ class App extends React.Component
         return this.state.user.token ;
       else if(str === 'user')
         return this.state.user.user ;
+      else if(str = 'history')
+          return this.state.user.user.history ;
       else
         return this.state.user.user.name ;
     else 

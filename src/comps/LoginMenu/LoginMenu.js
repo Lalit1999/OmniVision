@@ -3,24 +3,21 @@ import {Link} from'react-router-dom' ;
 
 import './menu.css' ;
 import profile from "./profile.png" ;
-import Userprofile from "../UserProfile/UserProfile.js" 
 
 class LoginMenu extends React.Component
 {
-	constructor(props) {
-	    super(props) ;
-	    this.state = {
-	    	userprofile : {} 
-	    } ;
+	state = {
+    	userprofile : {} 
+    } ;
 
-	    this.classMenu = {
-	    	face : 'item link' ,
-	    	color : 'item link' ,
-	    	general : 'item link' ,
-	    	age : 'item link' ,
-	    	history: 'item link' ,
-	    } ;
-	}
+    classMenu = {
+    	face : 'item link' ,
+    	color : 'item link' ,
+    	general : 'item link' ,
+    	age : 'item link' ,
+    	history: 'item link' ,
+    } ;
+	
 	
 	userProfile = () => {
 		if(this.props.usertoken)
