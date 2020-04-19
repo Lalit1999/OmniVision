@@ -18,6 +18,7 @@ class UserProfile extends React.Component
 		{
 			return (
 				<div className="propfileBox">
+					<div>Profile</div>
 					<div className="ptest">
 						<div className="left">
 							<div className = "left_corner_one">
@@ -32,12 +33,18 @@ class UserProfile extends React.Component
 						</div>
 						<div className="right">
 							<div className = "right_corner_one">
-								<p>Name</p>
-								<p>{this.props.user.name}</p>							
-								<p>E-mail</p>
-								<p>{this.props.user.email}</p>
-								<p>Phone number</p>
-								<p>{this.props.user.mobile}</p>
+								<div className = "flex">
+									<p>Name</p>
+									<p>{this.props.user.name}</p>							
+								</div>
+								<div className = "flex">
+									<p>E-mail</p>
+									<p>{this.props.user.email}</p>
+								</div>
+								<div className = "flex">
+									<p>Mobile No.</p>
+									<p>{this.props.user.mobile}</p>
+								</div>
 							</div>
 							<div className = "right_corner_two">
 								<button className = "button button-a " >Change password</button>
