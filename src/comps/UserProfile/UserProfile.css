@@ -53,7 +53,6 @@
   width: 7em ;
 }
 
-
 .ui
 {
   height: 30%;
@@ -64,7 +63,6 @@
   right: 0 ;
   border: 1px solid white;
 }
-
 
 .right
 {
@@ -87,11 +85,6 @@
   justify-content: flex-end;
 }
 
-.right, .right_corner_one, .right_corner_two
-{
-}
-
-
 .button
 {
   margin: 0.5em 0.2em ;
@@ -101,14 +94,14 @@
   font-weight: bold ;
   transition: all 0.4s ;
   letter-spacing: 0.05em ;
-  color: white !important;
-  border : 2px solid rgb(130, 195, 250);
-  transition: background-color 2s ;
+  color: white ;
+  border : 2px solid black;
+  transition: all 1s ;
 }
 
 .button:hover
 {
-  color: white !important;
-  transition: 1.4s ;
-  border: 2px solid white !important;
+  transform: scale(1.03);
+  background-color: black ; 
+  border: 2px solid white ;
 }
