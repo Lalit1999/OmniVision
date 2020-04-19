@@ -4,15 +4,8 @@ import './History.css' ;
 
 class History extends React.Component
 {	
-	constructor(props)
-	{
-		super(props) ;
-		this.state = {
-			temp : {}
-		} ;
-	} 
 	render()
-	{	console.log(props) ;
+	{	console.log(this.props) ;
 		return (
 			<div className="test">
 				<div>
