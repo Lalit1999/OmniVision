@@ -23,7 +23,7 @@ class UserProfile extends React.Component
 		{
 			return (
 				<div className="propfileBox">
-					<div>Profile</div>
+					<div className="heading">Profile</div>
 					<div className="ptest">
 						<div className="left">
 							<div className = "left_corner_one">
