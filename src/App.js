@@ -62,7 +62,7 @@ class App extends React.Component
         return this.state.user.token ;
       else if(str === 'user')
         return this.state.user.user ;
-      else if(str = 'history')
+      else if(str === 'history')
           return this.state.user.user.history ;
       else
         return this.state.user.user.name ;
@@ -86,7 +86,7 @@ class App extends React.Component
               <Route path='/face' exact render={props=><FaceDetection {...props} usertoken={this.checkUser()} color={color} />} />
               <Route path='/general' exact render={props=><GeneralModel {...props} usertoken={this.checkUser()} color={color} />} />
               <Route path='/age' exact render={props=><AgeGenderModel {...props} usertoken={this.checkUser()} color={color} />} />
-              <Route path='/history' exact render={props=><History {...props} usertoken={this.checkUser()} color={color} />} />
+              <Route path='/history' exact render={props=><History {...props} usertoken={this.checkUser('history')} color={color} />} />
               <Route path='/Userprofile' exact render={props=><UserProfile {...props} user={this.checkUser('user')} color={color} />} />
               <Route path='/login' exact render={props=><Login {...props} setUser={this.setUser} />} />
               <Route path='/register' exact render={props=><Register {...props} setUser={this.setUser} />} />
