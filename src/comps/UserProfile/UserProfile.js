@@ -11,6 +11,11 @@ class UserProfile extends React.Component
 	state = {
 	  	userprofile : {} 
 	} ;
+
+	formatDate = (dt) => {
+		const dat = new Date(dt).toLocaleString("en-US", {timeZone: "Asia/Kolkata"}); ;
+		return dat ;
+	}
 	
 	render()
 	{	console.log(this.props.user) ;
@@ -26,7 +31,7 @@ class UserProfile extends React.Component
 							</div>
 							<div className = "left_corner_two">
 								<p>Created at </p>
-	 							<p>{this.props.user.createdAt}</p>
+	 							<p>{this.formatDate(this.props.user.createdAt)}</p>
 	 							<Link to="/history"> History </Link> 
 	 							<button className = "button button-a " >Logout</button>
 							</div>
