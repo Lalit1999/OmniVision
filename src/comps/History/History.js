@@ -10,7 +10,7 @@ class History extends React.Component
 {	
 	render()
 	{	console.log(this.props) ;		
-		if(this.props.user)
+		if(this.props.usertoken)
 		{
 			return (
 				<div className="test">
