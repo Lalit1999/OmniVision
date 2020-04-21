@@ -42,6 +42,12 @@
   margin-left: 2em ;
 }
 
+.left_corner_two
+{
+  display: flex ;
+  flex-direction: column ;
+}
+
 .left_corner_one
 {
   justify-content: left ;

@@ -34,6 +34,7 @@ class UserProfile extends React.Component
 	 							<p>{this.formatDate(this.props.user.createdAt)}</p>
 	 							<Link className = "button" to="/history"> History </Link> 
 	 							<button className = "button" >Logout</button>
+	 							<button className = "button " >Delete account</button>
 							</div>
 						</div>
 						<div className="right">
@@ -54,6 +55,7 @@ class UserProfile extends React.Component
 							<div className = "right_corner_two">
 								<button className = "button " >Change password</button>
 								<button className = "button " >Edit Data</button>
+								
 							</div>
 						</div>
 					</div>

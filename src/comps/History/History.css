@@ -1,24 +1,36 @@
 .test
 {
 	border: 1px solid black;
-	margin: 10em 3em 2em ;
+	margin: 6em 2em 2em ;
 	padding: 1.5em ;
-	background-color: rgba(255, 255, 255, .1);
-	/*display: inline-block;*/
+	background-color: rgba(255, 255, 255, .3);
 	box-shadow: 4px 4px 8px 0 rgba( 0, 0, 0, .2 );
 	border-radius: .5rem;
-	/*position: fixed;*/
 	z-index: -1 ;
 	top: 0;
 	bottom: 0 ;
 	left: 0 ;
 	right: 0 ;
-	text-align: center; 
+}
+
+.h_heading
+{
+  text-align: center;
+  text-decoration: underline;
+  font-size: 3em ;
+}
+
+.hi
+{
+	width : 7% ;
+	height: 7% ;
+	background-color: transparent;
 }
 
 .title
-{
-	/*justify-content: center	;*/
+{	margin : 1em ;
 	border : 1px solid black ;
-
+	display: flex ;
+  	justify-content: space-between;
 }
+
