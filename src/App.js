@@ -84,9 +84,7 @@ class App extends React.Component
               <Route path='/' exact render={props=><Home {...props} color={color} user={this.checkUser('name')}/>} />
               <Route path='/color' exact render={props=><ColorDetection {...props} usertoken={this.checkUser()} color={color} />}/>
               <Route path='/face' exact render={props=><FaceDetection {...props} usertoken={this.checkUser()} color={color} />} />
-              <Route path='/general' exact render={props=><GeneralModel {...props} usertoken={this.checkUser()} color={color} />} />
-              <Route path='/age' exact render={props=><AgeGenderModel {...props} usertoken={this.checkUser()} color={color} />} />
-              <Route path='/history' exact render={props=><History {...props} usertoken={this.checkUser('history')} color={color} />} />
+              <Route path='/history' exact render={props=><History {...props} user={this.checkUser('history')} color={color} />} />
               <Route path='/Userprofile' exact render={props=><UserProfile {...props} user={this.checkUser('user')} color={color} />} />
               <Route path='/login' exact render={props=><Login {...props} setUser={this.setUser} />} />
               <Route path='/register' exact render={props=><Register {...props} setUser={this.setUser} />} />

@@ -1,0 +1,60 @@
+.ci-head
+{
+	font-weight: bold ;
+	font-size : 2.4rem ;
+	color : black ;
+	display: inline-block;
+	margin-left: 1.8em ; 
+}
+
+.ci-btn
+{
+	text-decoration: none;
+	color : gainsboro !important;
+	background-color: #8B0000 ;
+	padding : 1vh ;
+	margin-right : 3.2em;
+	font-size : 1.5rem ;
+	border-radius: 0.4rem ;
+	transition: all 0.5s ;
+}
+
+.ci-btn:hover
+{
+	transform: scale(1.2) ;
+}
+
+.ci-con
+{
+	display: flex ;
+	justify-content: space-between;
+	margin: 2em;
+}
+
+@media (max-width: 600px) {
+	.ci-head
+	{
+		font-size : 7vw ;
+		margin-left: 8.4vw ;
+		margin-top: 2.1vw !important; 
+	}
+
+	.ci-btn
+	{
+		padding : 1vw ;
+		margin-right : 8.86vw ;
+		font-size : 4.43vw ;
+		width: 24.35vw ;
+		height: 12.17vw ;
+	}
+
+	.ci-btn:hover
+	{
+		transform: scale(1.0) ;
+	}
+
+	.ci-con
+	{
+		margin: 0.5em;
+	}
+}
