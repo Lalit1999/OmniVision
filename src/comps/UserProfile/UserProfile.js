@@ -17,6 +17,32 @@ class UserProfile extends React.Component
 		return dat ;
 	}
 	
+	onLogoutClick = () => {
+		fetch('https://ov-api.herokuapp.com/logoutAll',{
+				method : 'post' ,
+				headers : { 'Content-Type' : 'application/json', 
+							'Authorization' : 'Bearer ' + this.props.usertoken} ,
+			})
+			.then(res => {
+				if(res.ok)
+					return res.json() ;
+				else
+					throw Error(res.statusText) ;
+			})
+			.then(data =>{	
+				console.log(data) ;
+				this.props.setUser({}) ;
+			}) 
+			.catch( err  => console.log(err) ) ;
+	}
+
+	generateLogInOut = () => {
+		if(this.props.usertoken)
+			return <button onClick={this.onLogoutClick}> Logout </button>
+		else
+			return <Link to="/login"> Login </Link> ;
+	}
+
 	render()
 	{	console.log(this.props.user) ;
 		if(this.props.user)
@@ -30,25 +56,27 @@ class UserProfile extends React.Component
 								<img src = {pencil} alt="pencil" className= "ui" />
 							</div>
 							<div className = "left_corner_two">
-								<p>Created at </p>
-	 							<p>{this.formatDate(this.props.user.createdAt)}</p>
+								<div className = "fdr" >
+									<p className = "bold" >Created at : </p>
+		 							<p>{this.formatDate(this.props.user.createdAt)}</p>
+								</div>
 	 							<Link className = "button" to="/history"> History </Link> 
-	 							<button className = "button" >Logout</button>
+	 							<div className = "button" >{this.generateLogInOut()}</div>
 	 							<button className = "button " >Delete account</button>
 							</div>
 						</div>
 						<div className="right">
 							<div className = "right_corner_one">
 								<div className = "flex">
-									<p>Name</p>
+									<p className = "bold" >Name</p>
 									<p>{this.props.user.name}</p>							
 								</div>
 								<div className = "flex">
-									<p>E-mail</p>
+									<p className = "bold" >E-mail</p>
 									<p>{this.props.user.email}</p>
 								</div>
 								<div className = "flex">
-									<p>Mobile No.</p>
+									<p className = "bold" >Mobile No.</p>
 									<p>{this.props.user.mobile}</p>
 								</div>
 							</div>
@@ -71,3 +99,33 @@ class UserProfile extends React.Component
 }
 
 export default UserProfile ;
+
+// onLogoutClick = () => {
+// 		fetch('https://ov-api.herokuapp.com/logoutAll',{
+// 				method : 'post' ,
+// 				headers : { 'Content-Type' : 'application/json', 
+// 							'Authorization' : 'Bearer ' + this.props.usertoken} ,
+// 			})
+// 			.then(res => {
+// 				if(res.ok)
+// 					return res.json() ;
+// 				else
+// 					throw Error(res.statusText) ;
+// 			})
+// 			.then(data =>{	
+// 				console.log(data) ;
+// 				this.props.setUser({}) ;
+// 			}) 
+// 			.catch( err  => console.log(err) ) ;
+// 	}
+
+// 	generateLogInOut = () => {
+// 		if(this.props.usertoken)
+// 			return <button onClick={this.onLogoutClick}> Logout </button>
+// 		else
+// 			return <Link to="/login"> Login </Link> ;
+// 	}
+
+
+// 	{this.generateLogInOut()}
+//  [line no -64 ]<button className = "button" >Logout</button>

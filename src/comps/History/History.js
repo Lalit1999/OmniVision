@@ -17,23 +17,25 @@ class History extends React.Component
 					<div className="h_heading">History</div>
 					<div>
 						<ClickInfo>
-						<div className = "title">
-							<h1>Day 1</h1>
-							<img src = {arrow} alt="arrow" className= "hi" />
-						</div>
+							<div className = "title">
+								<h1>Day 1</h1>
+							</div>
 						</ClickInfo>
-						<div className = "title">
-							<h1>Day 2</h1>
-							<img src = {arrow} alt="arrow" className= "hi" />
-						</div>
-						<div className = "title">
-							<h1>Day 3</h1>
-							<img src = {arrow} alt="arrow" className= "hi" />
-						</div>
-						<div className = "title">
-							<h1>Day 4</h1>
-							<img src = {arrow} alt="arrow" className= "hi" />
-						</div>
+						<ClickInfo>
+							<div className = "title">
+								<h1>Day 2</h1>
+							</div>
+						</ClickInfo>
+						<ClickInfo>
+							<div className = "title">
+								<h1>Day 3</h1>
+							</div>
+						</ClickInfo>
+						<ClickInfo>
+							<div className = "title">
+								<h1>Day 3</h1>
+							</div>
+						</ClickInfo>
 					</div>			
 				</div>
 			) ;
