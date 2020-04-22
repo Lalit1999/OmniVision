@@ -36,13 +36,6 @@ class UserProfile extends React.Component
 			.catch( err  => console.log(err) ) ;
 	}
 
-	generateLogInOut = () => {
-		if(this.props.usertoken)
-			return <button onClick={this.onLogoutClick}> Logout </button>
-		else
-			return <Link to="/login"> Login </Link> ;
-	}
-
 	render()
 	{	console.log(this.props.user) ;
 		if(this.props.user)
@@ -61,7 +54,7 @@ class UserProfile extends React.Component
 		 							<p>{this.formatDate(this.props.user.createdAt)}</p>
 								</div>
 	 							<Link className = "button" to="/history"> History </Link> 
-	 							<div className = "button" >{this.generateLogInOut()}</div>
+	 							<button className = "button" onClick={this.onLogoutClick} >Logout</button>
 	 							<button className = "button " >Delete account</button>
 							</div>
 						</div>
@@ -99,33 +92,3 @@ class UserProfile extends React.Component
 }
 
 export default UserProfile ;
-
-// onLogoutClick = () => {
-// 		fetch('https://ov-api.herokuapp.com/logoutAll',{
-// 				method : 'post' ,
-// 				headers : { 'Content-Type' : 'application/json', 
-// 							'Authorization' : 'Bearer ' + this.props.usertoken} ,
-// 			})
-// 			.then(res => {
-// 				if(res.ok)
-// 					return res.json() ;
-// 				else
-// 					throw Error(res.statusText) ;
-// 			})
-// 			.then(data =>{	
-// 				console.log(data) ;
-// 				this.props.setUser({}) ;
-// 			}) 
-// 			.catch( err  => console.log(err) ) ;
-// 	}
-
-// 	generateLogInOut = () => {
-// 		if(this.props.usertoken)
-// 			return <button onClick={this.onLogoutClick}> Logout </button>
-// 		else
-// 			return <Link to="/login"> Login </Link> ;
-// 	}
-
-
-// 	{this.generateLogInOut()}
-//  [line no -64 ]<button className = "button" >Logout</button>
