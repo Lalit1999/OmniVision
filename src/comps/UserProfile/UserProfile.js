@@ -51,6 +51,7 @@ class UserProfile extends React.Component
 			})
 			.then(data =>{	
 				console.log(data) ;
+				this.props.setUser({}) ;
 				this.props.history.push('/') ;
 			}) 
 			.catch( err  => console.log(err) ) ;
@@ -77,7 +78,7 @@ class UserProfile extends React.Component
 								</div>
 	 							<Link className = "button" to="/history"> History </Link> 
 	 							<button className = "button" onClick={this.onLogoutClick} >Logout</button>
-	 							<button className = "button" onClick={this.onDeleteClick} >Delete profile</button>
+	 							<button className = "button del" onClick={this.onDeleteClick} >Delete profile</button>
 							</div>
 						</div>
 						<div className="right">
@@ -97,7 +98,7 @@ class UserProfile extends React.Component
 							</div>
 							<div className = "right_corner_two">
 								<button className = "button " >Change password</button>
-								<button className = "button " >Edit Data</button>
+								<button className = "button " >Edit profile</button>
 								
 							</div>
 						</div>

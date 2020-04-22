@@ -78,9 +78,10 @@
 {
   height: 30%;
   width: 30% ;
-  justify-content: center;
+  /*justify-content: center;*/
+  text-align: center;
   position: absolute ;
-  margin-left: 1em ;
+  margin-left: 3em ;
   bottom: 0 ;
   right: 0 ;
   border: 1px solid white;
@@ -111,6 +112,8 @@
 {
   margin: 1em 0.4em 0.5em 0.4em ;
   padding: 0.5em 2em ;
+  text-align: center;
+  text-decoration: none;
   background-color: transparent;
   font-size: 1.5rem ;
   font-weight: bold ;
@@ -123,7 +126,13 @@
 
 .button:hover
 {
-  transform: scale(1.1);
+  /*transform: scale(1.1);*/
   background-color: black ; 
   border: 2px solid white ;
+}
+
+.del
+{
+  background-color: red ;
+  border : 2px solid white;
 }
