@@ -36,6 +36,27 @@ class UserProfile extends React.Component
 			.catch( err  => console.log(err) ) ;
 	}
 
+
+	onDeleteClick = () => {
+		fetch('https://ov-api.herokuapp.com/useres/me',{
+				method : 'delete' ,
+				headers : { 'Content-Type' : 'application/json', 
+							'Authorization' : 'Bearer ' + this.props.usertoken} ,
+			})
+			.then(res => {
+				if(res.ok)
+					return res.json() ;
+				else
+					throw Error(res.statusText) ;
+			})
+			.then(data =>{	
+				console.log(data) ;
+				this.props.history.push('/') ;
+			}) 
+			.catch( err  => console.log(err) ) ;
+	}
+
+
 	render()
 	{	console.log(this.props.user) ;
 		if(this.props.user)
@@ -55,7 +76,7 @@ class UserProfile extends React.Component
 								</div>
 	 							<Link className = "button" to="/history"> History </Link> 
 	 							<button className = "button" onClick={this.onLogoutClick} >Logout</button>
-	 							<button className = "button " >Delete account</button>
+	 							<button className = "button" onClick={this.onDeleteClick} >Delete profile</button>
 							</div>
 						</div>
 						<div className="right">
