@@ -38,7 +38,7 @@ class UserProfile extends React.Component
 
 
 	onDeleteClick = () => {
-		fetch('https://ov-api.herokuapp.com/useres/me',{
+		fetch('https://ov-api.herokuapp.com/users/me',{
 				method : 'delete' ,
 				headers : { 'Content-Type' : 'application/json', 
 							'Authorization' : 'Bearer ' + this.props.usertoken} ,
@@ -58,7 +58,8 @@ class UserProfile extends React.Component
 
 
 	render()
-	{	console.log(this.props.user) ;
+	{	
+		//console.log(this.props.user) ;
 		if(this.props.user)
 		{
 			return (

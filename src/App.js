@@ -72,7 +72,7 @@ class App extends React.Component
 
   render() 
   { const {color} = this.state ;
-    console.log(this.state) ;
+    // console.log(this.state) ;
     return(
       <div className="App">
         <BackGround setColor={this.setColor}/>
