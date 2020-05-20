@@ -1,9 +1,9 @@
 import React from 'react' ;
-import {Link} from'react-router-dom' ;
+// import {Link} from'react-router-dom' ;
 import {Redirect} from'react-router-dom' ;
 
 import './History.css' ;
-import arrow from '../LoginMenu/down_arrow.png' ;
+// import arrow from '../LoginMenu/down_arrow.png' ;
 import ClickInfo from '../ClickInfo/ClickInfo.js' ;
 
 class History extends React.Component

@@ -27,9 +27,9 @@ class DetectContent extends Component {
 		return <FileUp token={this.props.user} color={this.props.color} type={str} submit={this.submitUploadedImage}/> ;
 	}
 
-	returnCameraDiv = () => {
-		return <div> Coming Soon!.. </div> ;
-	}
+	// returnCameraDiv = () => {
+	// 	return <div> Coming Soon!.. </div> ;
+	// }
 
 	submitUploadedImage = (url) => {
 		console.log('Image Upload ho gayi') ;
@@ -58,7 +58,7 @@ class DetectContent extends Component {
 				<h3 className="detcont-subtitle" 
 				 style={ {textShadow: '-3px -3px 0 '+color+', 3px -3px 0 '+color+', -3px 3px 0 '+color+', 3px 3px 0 '+color+''} }>
 				 {this.props.text} </h3>
-				<ContentChoice choices={['Sample', 'Input-URL', 'Upload', 'Camera']} color={this.props.color}
+				<ContentChoice choices={['Sample', 'Input-URL', 'Upload']} color={this.props.color}
 				 Sample={<SampleImage data={this.props.data} onImageClick={this.props.onSampleImageClick}/>}
 				 Input-URL={
 				 	<div className="input-con" >
@@ -68,7 +68,6 @@ class DetectContent extends Component {
 							onClick={() => this.props.onSubmit(this.state.input)}> Detect </button>
 					</div>}
 				 Upload={this.checkUserLoggedIn(this.returnUploadDiv)}
-				 Camera={this.checkUserLoggedIn(this.returnCameraDiv)}
 				/>
 			</div>
 		);
@@ -76,3 +75,4 @@ class DetectContent extends Component {
 }
 
 export default DetectContent ;
+				 // Camera={this.checkUserLoggedIn(this.returnCameraDiv)}
