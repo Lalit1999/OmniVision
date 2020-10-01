@@ -40,14 +40,13 @@ class FaceDetection extends React.Component
 	onButtonSubmit = (txt) => {
 		app.models.predict(Clarifai.DEMOGRAPHICS_MODEL, txt)
 		.then( data => {
-			// console.log(data.outputs[0].data.regions) ;
 			if(data.outputs[0].data.regions)
 				this.setState({error: '', img: txt, faces: data.outputs[0].data.regions});
 			else
 				this.setState({error: 'Image has no detectable faces', img:'', faces: []});
 		})
 		.then( data => {
-			console.log('detection ke liye bhej raha hu')
+			// console.log('detection ke liye bhej raha hu')
 			
 			const obj = { link: this.state.img, data: this.state.faces } ;
 

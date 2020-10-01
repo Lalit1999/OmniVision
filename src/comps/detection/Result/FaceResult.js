@@ -4,12 +4,17 @@ import Box from '../../Box/Box.js' ;
  
 class FaceResult extends Component {
 
+	filArr = (arr, str) => {
+		return arr.concepts.filter(one => one.vocab_id === str) ;
+	}
+
 	sepArr = () => {
 		let arr = this.props.faces.map(f=> {
+			
 			return {face: f.region_info.bounding_box, 
-				race: f.data.face.multicultural_appearance.concepts[0]} ;
+				    race: this.filArr(f.data, 'multicultural_appearance')[0] } ;
 			} ) ;
-		// console.log(arr) ;
+		
 		return arr.map((item, i) => {
 			const {url, h, w} = this.props ;
 			
@@ -35,7 +40,7 @@ class FaceResult extends Component {
 							marginTop : tStr
 						}}/>
 					</div>
-					<Box key={item.race.id} middle="Accuracy :" text1={item.race.name}
+					<Box key={item.name} middle="Accuracy :" text1={item.race.name}
 								text2={((item.race.value*100)+' ').slice(0, 5) + ' %'}/>
 				</div>
 			) ;

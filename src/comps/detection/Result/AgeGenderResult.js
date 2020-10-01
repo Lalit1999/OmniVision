@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 import Box from '../../Box/Box.js' ;
 
 class AgeGenderResult extends Component {
+	filArr = (arr, str) => {
+		return arr.concepts.filter(one => one.vocab_id === str) ;
+	}
+
 	calcGender = (str) => {
 		return (str === 'masculine')?'Male':'Female' ;
 	}
@@ -16,11 +20,11 @@ class AgeGenderResult extends Component {
 		let arr = this.props.faces.map(f=> {
 			return {
 				face: f.region_info.bounding_box, 
-				gender: f.data.face.gender_appearance.concepts[0],
-				age: f.data.face.age_appearance.concepts[0]
+				gender: this.filArr(f.data, 'gender_appearance')[0],
+				age: this.filArr(f.data, 'age_appearance')[0]
 			} ;
 		} ) ;
-		// console.log(arr) ;
+		
 		return arr.map((item, i) => {
 			const {url, h, w} = this.props ;
 			
