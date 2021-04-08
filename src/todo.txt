@@ -1,31 +1,4 @@
-OVERALL
-
 1. Make a hover notification component to give messages like registration failed, successful, etc
 2. Loading Show karni hai detection ke wakt
-
--------------------------------------------
-Lalit (4-9-2019)
-----------------------------------------------
-19-03-2020
-
-1)	Home page theek karna hai.
-2)	user ka name aur login button add karna hai.
-3)	loading ke liye kuch karna hai.
-4)	login menu and profile page.
-	
-----------------------------------------------
-
-23-03-2020
-1)  Register, Login ka error bina component banaye dikha sakte hai
-2)  use Google Drive API
-3)  loginmenu me image warning de rahi hai
-
-----------------------------------------------
-
-01-04-2020
-
-FOR LALIT
-
-1) CSS me font-size decrease kar do menu ka ..scrollbar aa raha hai
-2) thoda sa ya to margin de do top-bottom ya hover effect change kar do
-3) user history me aisa kar sakte ho..agar logged in hai to /history varna /login
+3)	user ka name aur login button add karna hai.
+4)  use Google Drive API
